@@ -201,8 +201,11 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.08); }
 .trust-item {
   display: inline-flex; align-items: center; gap: .4rem;
   font-size: .8rem; color: #1A1A1A; font-weight: 600;
-  /* solid translucent — no backdrop-filter (blur over the hero image caused scroll jank) */
-  background: rgba(255,255,255,.72);
+  /* echter Glass-Look; eigene Compositor-Layer (translateZ) halten das Scrollen flüssig */
+  background: rgba(255,255,255,.16);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  transform: translateZ(0);
   padding: .35rem .8rem;
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,.55);
