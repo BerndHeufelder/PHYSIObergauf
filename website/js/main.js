@@ -45,6 +45,15 @@ if (mapBtn) {
   });
 }
 
+// Logo click on the start page: always scroll to the very top (no reload, no #-URL)
+const navLogo = document.querySelector('.nav-logo[href="#"]');
+if (navLogo) {
+  navLogo.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
 // Nav shadow via IntersectionObserver (no per-frame scroll handler)
 const navbar = document.getElementById('navbar');
 const sentinel = document.getElementById('nav-sentinel');
