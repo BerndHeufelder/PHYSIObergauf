@@ -385,6 +385,16 @@ section { padding: 96px 5vw; }
   -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 30px, #000 calc(100% - 26px), transparent 100%);
           mask-image: linear-gradient(to bottom, transparent 0, #000 30px, #000 calc(100% - 26px), transparent 100%);
 }
+/* Handy: rundes Porträt statt Breitbanner in Über mich */
+.ueber-portrait-mobile { display: none; }
+@media (max-width: 640px) {
+  .ueber-banner { display: none; }
+  .ueber-portrait-mobile { display: flex; justify-content: center; margin-bottom: 1.6rem; }
+  .ueber-portrait-mobile img {
+    width: 190px; height: 190px; border-radius: 50%;
+    box-shadow: var(--shadow); display: block;
+  }
+}
 /* temporary A/B comparison label */
 .variant-tag {
   font-size: .72rem; font-weight: 700; letter-spacing: .1em;
