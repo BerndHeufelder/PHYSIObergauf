@@ -502,12 +502,12 @@ section { padding: 96px 5vw; }
 }
 .gallery-toggle { display: none; }
 @media (max-width: 900px) {
-  .willkommen-gallery { grid-template-columns: 1fr 1fr; gap: .8rem; }
+  .willkommen-gallery { grid-template-columns: 1fr 1fr; gap: .8rem; grid-auto-flow: dense; }
   .willkommen-gallery img { height: auto; aspect-ratio: 1/1; }
-  /* Fußmatte als breiter Auftakt über beide Spalten */
-  .willkommen-gallery img:first-child { grid-column: span 2; aspect-ratio: 21/10; }
-  /* eingeklappt: Fußmatte + erstes Kachelpaar, Rest hinter „Mehr zeigen" */
-  .willkommen-gallery:not(.expanded) img:nth-child(n+4) { display: none; }
+  /* Fußmatte (4. Bild) als breite Kachel über beide Spalten */
+  .willkommen-gallery img:nth-child(4) { grid-column: span 2; aspect-ratio: 21/10; }
+  /* eingeklappt: erstes Kachelpaar, Rest hinter „Mehr zeigen" */
+  .willkommen-gallery:not(.expanded) img:nth-child(n+3) { display: none; }
   .gallery-toggle {
     display: block; margin: 1rem auto 0;
     cursor: pointer; font-family: inherit;
