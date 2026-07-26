@@ -4,12 +4,41 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Physio Bergauf – Physiotherapie in Batschuns</title>
+  <meta name="description" content="Physio Bergauf – Praxis für Physiotherapie & Heilmassage in Batschuns, Vorarlberg. Katharina Heufelder, BSc. Wahltherapeutin · alle Kassen · Hausbesuche möglich." />
   <link rel="icon" type="image/png" href="img/logo.png" />
   <link rel="apple-touch-icon" href="img/logo.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Physio Bergauf – Physiotherapie & Heilmassage in Batschuns" />
+  <meta property="og:description" content="Praxis für Physiotherapie & Heilmassage in Batschuns, Vorarlberg. Wahltherapeutin · alle Kassen · Hausbesuche möglich." />
+  <meta property="og:image" content="https://berndheufelder.github.io/PHYSIObergauf/img/hero.jpg" />
+  <meta property="og:url" content="https://berndheufelder.github.io/PHYSIObergauf/" />
+  <meta property="og:locale" content="de_AT" />
+  <!-- fonts are self-hosted via css/styles.css (no Google Fonts requests) -->
   <link rel="stylesheet" href="css/styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "Physio Bergauf – Katharina Heufelder",
+    "description": "Praxis für Physiotherapie & Heilmassage in Batschuns, Vorarlberg",
+    "url": "https://berndheufelder.github.io/PHYSIObergauf/",
+    "image": "https://berndheufelder.github.io/PHYSIObergauf/img/hero.jpg",
+    "logo": "https://berndheufelder.github.io/PHYSIObergauf/img/logo.png",
+    "telephone": "+43 664 9624672",
+    "email": "therapie@physiobergauf.at",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bazol 20",
+      "addressLocality": "Batschuns",
+      "postalCode": "6835",
+      "addressRegion": "Vorarlberg",
+      "addressCountry": "AT"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 47.280372, "longitude": 9.666690 },
+    "medicalSpecialty": "Physiotherapy"
+  }
+  </script>
 </head>
 <body>
   <span id="nav-sentinel" aria-hidden="true"></span>
@@ -25,7 +54,7 @@
       <li><a href="#leistungen">Leistungen</a></li>
       <li><a href="#ablauf">Ablauf</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
-      <li><a href="#kontakt" class="nav-cta">Termin anfragen</a></li>
+      <li><a href="#terminanfrage" class="nav-cta">Termin anfragen</a></li>
     </ul>
     <button class="burger" id="burger" aria-label="Menü öffnen">
       <span></span><span></span><span></span>
@@ -48,7 +77,7 @@
       </div>
       <p>Willkommen in meiner Praxis für Physiotherapie und Heilmassage.</p>
       <div class="btn-group">
-        <a href="#kontakt" class="btn-primary">
+        <a href="#terminanfrage" class="btn-primary">
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
           Termin anfragen
         </a>
@@ -245,6 +274,7 @@
             <li>Atemwegserkrankungen</li>
             <li>Herzbeschwerden</li>
           </ul>
+          <a class="cat-link" href="https://viszerale-therapie.at" target="_blank" rel="noopener">Mehr über Viszerale Therapie →</a>
         </div>
       </div>
       <div class="cat-card">
@@ -343,6 +373,16 @@
         <h3>Ohne Verordnung möglich</h3>
         <p>Präventive Maßnahmen wie Haltungsschulung, Massagen und Wärmeanwendungen sind auch direkt, ohne Verordnung durch einen Arzt möglich.</p>
       </div>
+      <div class="ablauf-card">
+        <div class="ablauf-card-icon">🗂️</div>
+        <h3>Dein Erstbesuch</h3>
+        <p>Bitte bring zum ersten Termin deinen Überweisungsschein sowie vorhandene Befunde (Röntgen, MRT) mit und trage bequeme Kleidung.</p>
+      </div>
+      <div class="ablauf-card">
+        <div class="ablauf-card-icon">⏰</div>
+        <h3>Terminverhinderung</h3>
+        <p>Solltest du einen Termin nicht wahrnehmen können, bitte ich um Absage mindestens 24 Stunden vorher — andernfalls muss ich ein Ausfallhonorar verrechnen.</p>
+      </div>
     </div>
   </section>
 
@@ -361,38 +401,87 @@
       <div class="kontakt-info">
         <div class="kontakt-block">
           <h3>Adresse</h3>
-          <p>Physio Bergauf<br>Batschuns<br>6835 Zwischenwasser<br>Vorarlberg, Österreich</p>
+          <p>Physio Bergauf – Katharina Heufelder, BSc.<br>Bazol 20<br>6835 Batschuns<br>Vorarlberg, Österreich</p>
         </div>
         <div class="kontakt-block">
           <h3>Kontakt</h3>
           <p>
-            <a href="tel:+43000000000">+43 (0)__ ___ ____</a><br>
-            <a href="mailto:info@physio-bergauf.at">info@physio-bergauf.at</a>
+            <a href="tel:+436649624672">+43 664 9624672</a><br>
+            <a href="mailto:therapie@physiobergauf.at">therapie@physiobergauf.at</a>
           </p>
         </div>
         <div class="kontakt-block">
           <h3>Öffnungszeiten</h3>
-          <table class="hours-table">
-            <tr><td>Montag – Freitag</td><td>08:00 – 18:00</td></tr>
-            <tr><td>Samstag</td><td>Nach Vereinbarung</td></tr>
-            <tr><td>Sonn- &amp; Feiertage</td><td>Geschlossen</td></tr>
-          </table>
+          <p>Termine nach Vereinbarung</p>
         </div>
         <div>
-          <a href="#kontakt" class="btn-primary" style="display:inline-flex; margin-top:.5rem">
+          <a href="#terminanfrage" class="btn-primary" style="display:inline-flex; margin-top:.5rem">
             <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             Termin anfragen
           </a>
         </div>
       </div>
-      <div class="map-wrap">
-        <iframe
-          title="Batschuns Karte"
-          src="https://www.openstreetmap.org/export/embed.html?bbox=9.6900%2C47.2650%2C9.7400%2C47.2950&layer=mapnik&marker=47.2800%2C9.7150"
-          loading="lazy"
-          allowfullscreen>
-        </iframe>
+      <!-- click-to-load: no request to OpenStreetMap before the visitor consents (DSGVO) -->
+      <div class="map-wrap" id="mapWrap">
+        <div class="map-placeholder">
+          <svg width="34" height="34" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg>
+          <strong>Bazol 20, 6835 Batschuns</strong>
+          <button type="button" id="mapLoadBtn">Karte laden</button>
+          <p>Beim Laden der Karte werden Daten an OpenStreetMap (openstreetmap.org) übertragen. Details in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+        </div>
       </div>
+    </div>
+
+    <!-- ── Terminanfrage (on-page form — no mail client needed) ── -->
+    <div class="anfrage" id="terminanfrage">
+      <h3>Terminanfrage</h3>
+      <p class="anfrage-sub">Schreib mir direkt hier — ich melde mich so rasch wie möglich bei dir.</p>
+      <form id="anfrageForm" action="https://formsubmit.co/therapie@physiobergauf.at" method="POST">
+        <input type="hidden" name="_subject" value="Terminanfrage über physiobergauf.at" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+        <div class="form-row">
+          <label>Name*
+            <input type="text" name="Name" required autocomplete="name" />
+          </label>
+          <label>E-Mail*
+            <input type="email" name="E-Mail" required autocomplete="email" />
+          </label>
+        </div>
+        <label>Telefon (optional)
+          <input type="tel" name="Telefon" autocomplete="tel" />
+        </label>
+        <label>Nachricht*
+          <textarea name="Nachricht" required placeholder="Dein Anliegen, Wunschtermine, Rückfragen …"></textarea>
+        </label>
+        <label class="consent">
+          <input type="checkbox" required />
+          Ich stimme zu, dass meine Angaben zur Bearbeitung der Anfrage verarbeitet werden (<a href="datenschutz.html">Datenschutzerklärung</a>). Bitte übermittle keine sensiblen Gesundheitsdaten — Details besprechen wir telefonisch oder persönlich.
+        </label>
+        <button type="submit" class="btn-primary">Anfrage senden</button>
+        <p class="form-status" id="formStatus" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ── Nützliche Links ── -->
+  <section id="links">
+    <div class="section-label">Gut zu wissen</div>
+    <h2 class="section-title">Nützliche Links</h2>
+    <div class="links-grid">
+      <a class="link-card" href="https://www.physioaustria.at" target="_blank" rel="noopener">
+        <strong>Physio Austria</strong>
+        <span>Bundesverband der PhysiotherapeutInnen Österreichs — Berufsverband &amp; Berufsrecht.</span>
+      </a>
+      <a class="link-card" href="https://gbr-public.ehealth.gv.at" target="_blank" rel="noopener">
+        <strong>Gesundheitsberuferegister</strong>
+        <span>Öffentliches Register der Gesundheitsberufe in Österreich — hier findest du meine Registrierung.</span>
+      </a>
+      <a class="link-card" href="https://viszerale-therapie.at" target="_blank" rel="noopener">
+        <strong>Viszerale Therapie</strong>
+        <span>Hintergründe &amp; Wissenswertes zur viszeralen Therapie.</span>
+      </a>
     </div>
   </section>
 
@@ -400,10 +489,16 @@
   <footer>
     <span>© 2026 Physio Bergauf, Batschuns</span>
     <div class="footer-links">
-      <a href="#">Impressum</a>
-      <a href="#">Datenschutz</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
     </div>
   </footer>
+
+  <!-- mobile quick-contact bar (visible ≤640px) -->
+  <div class="quick-contact">
+    <a href="tel:+436649624672">📞 Anrufen</a>
+    <a href="#terminanfrage">✉️ Anfrage</a>
+  </div>
 
   <script defer src="js/main.js"></script>
 </body>
