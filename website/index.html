@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Physio Bergauf – Physiotherapie in Batschuns</title>
+  <link rel="icon" type="image/png" href="img/logo.png" />
+  <link rel="apple-touch-icon" href="img/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <span id="nav-sentinel" aria-hidden="true"></span>
+
+  <!-- ── Nav ── -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo" aria-label="Physio Bergauf — zur Startseite">
+      <img src="img/logo.png" alt="" width="44" height="44" />
+      <span class="nav-logo-text">Physio<em>Bergauf</em></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#ueber-mich">Über mich</a></li>
+      <li><a href="#leistungen">Leistungen</a></li>
+      <li><a href="#ablauf">Ablauf</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+      <li><a href="#kontakt" class="nav-cta">Termin anfragen</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section id="hero">
+    <!-- background mountain image (vintage filter baked into the file) -->
+    <div class="hero-bg">
+      <img src="img/hero.jpg" alt="Bergpanorama Sommer" width="2000" height="1333" fetchpriority="high" decoding="async" />
+    </div>
+
+    <!-- centered stacked content (Bold layout) -->
+    <div class="hero-content">
+      <h1>PHYSIO<em>bergauf</em></h1>
+      <div class="hero-loc">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg>
+        Batschuns
+      </div>
+      <p>Willkommen in meiner Praxis für Physiotherapie und Heilmassage.</p>
+      <div class="btn-group">
+        <a href="#kontakt" class="btn-primary">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          Termin anfragen
+        </a>
+        <a href="#leistungen" class="btn-secondary">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+          Meine Leistungen
+        </a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Wahltherapeutin
+        </div>
+        <div class="trust-item">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Alle Kassen
+        </div>
+        <div class="trust-item">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Hausbesuche möglich
+        </div>
+      </div>
+    </div>
+
+    <blockquote class="hero-quote-box">„Gemeinsam geht’s bergauf – mit gezielter Therapie und persönlicher Begleitung"</blockquote>
+
+    <a href="#willkommen" class="hero-scroll">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+      Mehr entdecken
+    </a>
+  </section>
+
+  <!-- ── Willkommen ── -->
+  <section id="willkommen">
+    <div class="willkommen-content">
+      <div class="section-label">Schön, dass du da bist</div>
+      <h2 class="section-title willkommen-title">Willkommen in meiner Praxis für<br><em>Physiotherapie &amp; Heilmassage</em></h2>
+      <p>In meiner Praxis stehst du und dein Wohlbefinden im Mittelpunkt. Mit gezielter Physiotherapie und wohltuenden Heilmassagen unterstütze ich dich dabei, Schmerzen zu lindern, Beweglichkeit zu verbessern und neue Kraft für den Alltag zu gewinnen.</p>
+      <p>Ob nach Verletzungen, bei chronischen Beschwerden oder einfach zur Entspannung — ich nehme mir Zeit für dich und erstelle individuelle Behandlungspläne, die genau auf deine Bedürfnisse abgestimmt sind. Fachliche Kompetenz, persönliche Betreuung und eine angenehme Atmosphäre bilden die Grundlage meiner Arbeit.</p>
+      <p class="willkommen-cta">Ich freue mich darauf, dich auf deinem Weg zu mehr Gesundheit und Lebensqualität zu begleiten.</p>
+      <div class="willkommen-img">
+        <img src="img/praxis-raum.jpg" width="1536" height="1024" loading="lazy" decoding="async"
+          alt="Heller Behandlungsraum der Praxis Physio Bergauf mit Therapieliege und Sprossenwand" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Über mich ── -->
+  <section id="ueber-mich" class="has-banner map-bg">
+    <div class="section-banner banner-red">
+      <div class="section-banner-overlay">
+        <div class="section-label">Das bin ich</div>
+        <h2 class="section-title">Über mich</h2>
+      </div>
+    </div>
+    <div class="ueber-banner">
+      <img src="img/portrait_banner2.jpg" width="2000" height="501" loading="lazy" decoding="async"
+        alt="Kathi – Physiotherapeutin von Herzen, Physio Bergauf" />
+    </div>
+    <div class="ueber-grid">
+      <div class="ueber-textcol">
+        <div class="ueber-text">
+          <h2 class="section-title ueber-greeting">Hallo, ich bin Kathi</h2>
+          <p>Geboren und aufgewachsen im schönen Kärnten und seit vielen Jahren mit Begeisterung Physiotherapeutin. Was als Interesse an Bewegung und Gesundheit begann, hat sich zu meiner Leidenschaft entwickelt: in meiner kleinen aber feinen Praxis begleite ich dich mit Freude und Fachwissen auf deinem Weg zu mehr Gesundheit, Beweglichkeit und Wohlbefinden.</p>
+          <p>Jeder Mensch bringt seine eigene Geschichte mit, und der Körper erzählt oft mehr, als man denkt. Ich nehme mir Zeit, höre aufmerksam zu und schaue genau hin – denn jeder Mensch ist einzigartig und verdient eine Behandlung, die wirklich zu ihm passt.</p>
+          <blockquote class="einstein-quote">
+            „Der Körper ist ein gut funktionierendes System. Manchmal muss man ihn nur wieder in die richtigen Bahnen lenken, Muskeln wieder aufbauen und richtige Bewegungen neu erlernen, um die Beschwerden zu lindern."
+          </blockquote>
+          <div class="ueber-quals">
+            <span class="qual-tag">Physiotherapeutin</span>
+            <span class="qual-tag">Medizinische Masseurin</span>
+            <span class="qual-tag">Manuelle Therapie</span>
+            <span class="qual-tag">Manuelle Lymphdrainage</span>
+            <span class="qual-tag">Fußreflexzonenmassage</span>
+          </div>
+        </div>
+        <details class="fb">
+          <summary>
+            <span class="fb-title">Fortbildungen &amp; Zertifikate</span>
+            <span class="fb-count">15</span>
+            <svg class="fb-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <ul class="fb-list">
+            <li><span class="fb-yr">2014</span>Skoliotische Fehlhaltung – funktionelle Behandlungsansätze</li>
+            <li><span class="fb-yr">2014</span>Narbenentstörung nach AFM</li>
+            <li><span class="fb-yr">2015</span>Medical Taping Concept</li>
+            <li><span class="fb-yr">2015</span>Stingtraining UE &amp; OE</li>
+            <li><span class="fb-yr">2015</span>Mulligan Concept Modul 1+2</li>
+            <li><span class="fb-yr">2015–2017</span>Manuelle Therapie nach Sachse, DOMM</li>
+            <li><span class="fb-yr">2016</span>Faszientherapie – Fasziendistorsionsmodell nach Typaldos</li>
+            <li><span class="fb-yr">2016</span>Innovative funktionelle Behandlungskonzepte für Fuß, oberes Sprunggelenk, Knie, Hüfte</li>
+            <li><span class="fb-yr">2019</span>Viszerale Therapie &amp; integrative manuelle Behandlungsmethoden – Läsionskette Verdauungstrakt-Wirbelsäule</li>
+            <li><span class="fb-yr">2019</span>Viszerale Therapie &amp; integrative manuelle Behandlungsmethoden – Thorax-BWS/HWS</li>
+            <li><span class="fb-yr">2022</span>ESP Schulterrehabilitation</li>
+            <li><span class="fb-yr">2023</span>Training nach der Geburt</li>
+            <li><span class="fb-yr">2025</span>Geburtsvorbereitung</li>
+            <li><span class="fb-yr">2025</span>Vaginale Palpation</li>
+            <li><span class="fb-yr">2026</span>Hallux Valgus – ein multifaktorielles Bild</li>
+          </ul>
+        </details>
+      </div>
+
+      <div class="ueber-timelinecol">
+        <div class="werdegang">
+          <h3>Beruflicher Werdegang</h3>
+          <ol class="vtl2">
+            <li class="vtl2-year">
+              <div class="vtl2-left"><div class="vtl2-item">Abschluss Med. Masseurin, med. Bademeister, Elektrotherapeutin · Ausbildungszentrum Bergler, Graz <span class="dur">(2010–2011)</span></div></div>
+              <span class="vtl2-marker">2010</span>
+              <div class="vtl2-right"></div>
+            </li>
+            <li class="vtl2-year">
+              <div class="vtl2-left"></div>
+              <span class="vtl2-marker">2011</span>
+              <div class="vtl2-right"><div class="vtl2-item">Bachelorabschluss Physiotherapie · FH Gesundheit Tirol <span class="dur">(2011–2014)</span></div></div>
+            </li>
+            <li class="vtl2-year">
+              <div class="vtl2-left"><div class="vtl2-item">pka Innsbruck — ambulante Wirbelsäulenreha &amp; Hausbesuche im Seniorenheim <span class="dur">(2014–2016)</span></div></div>
+              <span class="vtl2-marker">2014</span>
+              <div class="vtl2-right"></div>
+            </li>
+            <li class="vtl2-year">
+              <div class="vtl2-left"></div>
+              <span class="vtl2-marker">2016</span>
+              <div class="vtl2-right"><div class="vtl2-item">Privatklinik Hochrum (Tirol) — inkl. Praktikumskoordination <span class="dur">(2016–2020)</span></div></div>
+            </li>
+            <li class="vtl2-year">
+              <div class="vtl2-left"><div class="vtl2-item">Physiotherapeutische Betreuung SPG Innsbruck West <span class="dur">(2016)</span></div></div>
+              <span class="vtl2-marker">2016</span>
+              <div class="vtl2-right"></div>
+            </li>
+            <li class="vtl2-year">
+              <div class="vtl2-left"></div>
+              <span class="vtl2-marker">2016</span>
+              <div class="vtl2-right"><div class="vtl2-item">Freiberufliche Tätigkeit · Gemeinschaftspraxis in Innsbruck <span class="dur">(2016–2023)</span></div></div>
+            </li>
+            <li class="vtl2-year">
+              <div class="vtl2-left"><div class="vtl2-item">Bergauf – Praxis für Physiotherapie &amp; Heilmassage in Batschuns <span class="dur">(seit 2023)</span></div></div>
+              <span class="vtl2-marker">2023</span>
+              <div class="vtl2-right"></div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Leistungen ── -->
+  <section id="leistungen" class="has-banner">
+    <div class="section-banner banner-teal">
+      <div class="section-banner-overlay">
+        <div class="section-label">Ganzheitliche Physiotherapie</div>
+        <h2 class="section-title">Leistungen</h2>
+      </div>
+    </div>
+    <p class="section-sub">Ursachen behandeln statt Symptome verwalten.</p>
+
+    <div class="leistungen-intro">
+      <p class="intro-quote">„Jeder Mensch bringt seine eigene Geschichte mit, und der Körper erzählt oft mehr, als man denkt."</p>
+      <p>Ich nehme mir Zeit, höre aufmerksam zu und schaue genau hin – denn jeder Mensch ist einzigartig und verdient eine Behandlung, die wirklich zu ihm passt.</p>
+      <p>Durch gezielte <strong>manuelle Therapie, aktives Training und das Erlernen gesunder Bewegungsmuster</strong> arbeite ich mit dir daran, nachhaltige Lösungen zu schaffen – für weniger Schmerzen, mehr Beweglichkeit und ein gesundes Körpergefühl im Alltag. Ich bin überzeugt, dass der Körper in den meisten Fällen die Fähigkeit besitzt, sich anzupassen und zu regenerieren. Oft braucht er lediglich die richtigen Impulse, um wieder in sein natürliches Gleichgewicht zu finden.</p>
+      <p>Prävention ist ebenso ein wichtiger Bestandteil meiner physiotherapeutischen Arbeit. Durch gezielte Bewegungstherapie, individuelle Beratung und verständliche Aufklärung unterstütze ich dich dabei, Zusammenhänge zu erkennen, Fehlbelastungen zu vermeiden und Beschwerden nachhaltig vorzubeugen.</p>
+    </div>
+
+    <div class="cat-grid">
+      <div class="cat-card">
+        <img class="cat-card-img" src="img/behandlung-bewegung.jpg" width="665" height="1000" loading="lazy" decoding="async" alt="Aktive Bewegungstherapie vor dem Spiegel" />
+        <div class="cat-body">
+          <h3>Orthopädie · Traumatologie · Unfallchirurgie · Gesundheitsförderung &amp; Prävention</h3>
+          <ul>
+            <li>Behandlung von akuten und chronischen Beschwerden</li>
+            <li>Behandlung nach Unfällen, Sportverletzungen und Knochenbrüchen</li>
+            <li>Nach unfallchirurgischen Operationen (Meniskusläsion, Kreuzbandriss, Sehnenverletzungen)</li>
+            <li>Vor- und Nachbehandlung bei Operationen (Knie-, Hüft- und Schulterprothese)</li>
+            <li>Wirbelsäulen- und Gelenkbeschwerden</li>
+            <li>Schmerzreduktion</li>
+            <li>Verspannungen, Fehlhaltungen</li>
+            <li>Narbenentstörung</li>
+            <li>Arbeitsplatzanalyse, ergonomische Beratung</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cat-card">
+        <img class="cat-card-img" src="img/behandlung-viszeral.jpg" width="666" height="1000" loading="lazy" decoding="async" alt="Viszerale Therapie im Bauchbereich" />
+        <div class="cat-body">
+          <h3>Viszerale Therapie</h3>
+          <p class="cat-sub">Sanfte Behandlung der inneren Organe und ihrer Verbindungen zum Bewegungsapparat.</p>
+          <ul>
+            <li>Wirbelsäulenbeschwerden</li>
+            <li>Gelenkbeschwerden</li>
+            <li>Kopfschmerzen, Schwindel, Tinnitus</li>
+            <li>Magenschmerzen, Sodbrennen</li>
+            <li>Verdauungsprobleme</li>
+            <li>Atemwegserkrankungen</li>
+            <li>Herzbeschwerden</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cat-card">
+        <img class="cat-card-img" src="img/anatomie-becken.jpg" width="1000" height="750" loading="lazy" decoding="async" alt="Anatomisches Becken-Modell – Beckenboden" />
+        <div class="cat-body">
+          <h3>Gynäkologie</h3>
+          <p class="cat-sub">Für mehr Wohlbefinden, Stabilität und Lebensqualität in jeder Phase des Frauseins.</p>
+          <ul>
+            <li>Schwangerschaft, Geburtsvorbereitung</li>
+            <li>Nach Geburten: Narbenbehandlung, Rückbildung, Rektusdiastase</li>
+            <li>Behandlung bei Inkontinenz und Senkungen</li>
+            <li>Behandlung nach gynäkologischen Operationen</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="zusatz">
+      <h3>Zusatzleistungen</h3>
+      <div class="zusatz-tags">
+        <span>Lymphdrainage</span>
+        <span>Fußreflexzonenmassage</span>
+        <span>Elektrotherapie</span>
+        <span>Kinesiotaping</span>
+        <span>Narbenbehandlung</span>
+        <span>Physiotherapeutische Beratung</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Ablauf ── -->
+  <section id="ablauf">
+    <div class="section-label">So funktioniert es</div>
+    <h2 class="section-title">Dein Weg zur Therapie</h2>
+    <p class="section-sub">Von der Überweisung bis zur Abrechnung — einfach und unkompliziert.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">📋</div>
+        <div>
+          <h3>Überweisung ausstellen lassen</h3>
+          <p>Dein Hausarzt oder Facharzt stellt dir den entsprechenden Therapieschein aus.</p>
+        </div>
+        <span class="step-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+      </div>
+      <div class="step step-optional">
+        <div class="step-num">🏛️</div>
+        <div>
+          <span class="step-badge">Nur SVS</span>
+          <h3>Bewilligung einholen</h3>
+          <p>Nur für SVS-Versicherte: Die Überweisung muss vorab bei der Krankenkasse bewilligt werden.</p>
+        </div>
+        <span class="step-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+      </div>
+      <div class="step">
+        <div class="step-num">📅</div>
+        <div>
+          <h3>Termin vereinbaren</h3>
+          <p>Kontaktiere mich — ich finde mit dir gemeinsam einen passenden Termin.</p>
+        </div>
+        <span class="step-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+      </div>
+      <div class="step">
+        <div class="step-num">💪</div>
+        <div>
+          <h3>Therapie absolvieren</h3>
+          <p>Individuell abgestimmte Behandlung in meiner Praxis in Batschuns.</p>
+        </div>
+        <span class="step-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+      </div>
+      <div class="step">
+        <div class="step-num">🧾</div>
+        <div>
+          <h3>Rechnung bei Krankenkasse einreichen</h3>
+          <p>Zahlungsbeleg und Verordnungsschein bei deiner Krankenkasse einreichen — du erhältst gemäß Tarifbestimmungen einen Teil der Kosten rückerstattet.</p>
+        </div>
+        <span class="step-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+      </div>
+      <div class="step step-optional">
+        <div class="step-num">🛡️</div>
+        <div>
+          <span class="step-badge">Falls vorhanden</span>
+          <h3>Zusatzversicherung einreichen</h3>
+          <p>Den verbleibenden Selbstbehalt kannst du bei einer vorhandenen Zusatzversicherung einreichen.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ablauf-cards">
+      <div class="ablauf-card">
+        <div class="ablauf-card-icon">ℹ️</div>
+        <h3>Wahltherapeutin</h3>
+        <p>Ich arbeite als Wahltherapeutin — am Ende der Therapieserie bekommst du von mir eine Honorarnote, welche vollständig zu begleichen ist. Ich gebe dir gerne Auskünfte über die genaue Vorgehensweise für die Rückverrechnung.</p>
+      </div>
+      <div class="ablauf-card">
+        <div class="ablauf-card-icon">🌿</div>
+        <h3>Ohne Verordnung möglich</h3>
+        <p>Präventive Maßnahmen wie Haltungsschulung, Massagen und Wärmeanwendungen sind auch direkt, ohne Verordnung durch einen Arzt möglich.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Kontakt ── -->
+  <section id="kontakt" class="has-banner">
+    <div class="section-banner banner-photo">
+      <img src="img/anschrift-berge.jpg" width="1600" height="500" loading="lazy" decoding="async"
+        alt="Alpenlandschaft in Vorarlberg – Heimat von Physio Bergauf" />
+      <div class="section-banner-overlay">
+        <div class="section-label">Hier findest du mich</div>
+        <h2 class="section-title">Anschrift &amp; Kontakt</h2>
+      </div>
+    </div>
+    <p class="section-sub">Ich freue mich auf deine Anfrage — persönlich, telefonisch oder per E-Mail.</p>
+    <div class="kontakt-grid">
+      <div class="kontakt-info">
+        <div class="kontakt-block">
+          <h3>Adresse</h3>
+          <p>Physio Bergauf<br>Batschuns<br>6835 Zwischenwasser<br>Vorarlberg, Österreich</p>
+        </div>
+        <div class="kontakt-block">
+          <h3>Kontakt</h3>
+          <p>
+            <a href="tel:+43000000000">+43 (0)__ ___ ____</a><br>
+            <a href="mailto:info@physio-bergauf.at">info@physio-bergauf.at</a>
+          </p>
+        </div>
+        <div class="kontakt-block">
+          <h3>Öffnungszeiten</h3>
+          <table class="hours-table">
+            <tr><td>Montag – Freitag</td><td>08:00 – 18:00</td></tr>
+            <tr><td>Samstag</td><td>Nach Vereinbarung</td></tr>
+            <tr><td>Sonn- &amp; Feiertage</td><td>Geschlossen</td></tr>
+          </table>
+        </div>
+        <div>
+          <a href="#kontakt" class="btn-primary" style="display:inline-flex; margin-top:.5rem">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            Termin anfragen
+          </a>
+        </div>
+      </div>
+      <div class="map-wrap">
+        <iframe
+          title="Batschuns Karte"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=9.6900%2C47.2650%2C9.7400%2C47.2950&layer=mapnik&marker=47.2800%2C9.7150"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <span>© 2026 Physio Bergauf, Batschuns</span>
+    <div class="footer-links">
+      <a href="#">Impressum</a>
+      <a href="#">Datenschutz</a>
+    </div>
+  </footer>
+
+  <script defer src="js/main.js"></script>
+</body>
+</html>
