@@ -29,7 +29,7 @@ body {
   --red:    #8B1A2B;
   --red-dk: #6B1220;
   --red-btn:  #b02338;   /* banner-red right edge — buttons & logo */
-  --teal-btn: #52d4d4;   /* banner-teal right edge — buttons & logo */
+  --teal-btn: #3cc6c6;   /* banner-teal right edge, leicht abgedunkelt — buttons & logo */
   --teal:   #5DA7A8;
   --teal-lt:#E8F2F2;
   --bg:     #FAFAF8;
@@ -230,7 +230,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.08); }
   transition: background .2s, border-color .2s, transform .15s;
 }
 .btn-secondary:hover {
-  background: #35bcbc; border-color: #35bcbc;
+  background: #2da9a9; border-color: #2da9a9;
   transform: translateY(-1px);
 }
 .hero-scroll {
