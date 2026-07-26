@@ -28,6 +28,8 @@ body {
 :root {
   --red:    #8B1A2B;
   --red-dk: #6B1220;
+  --red-btn:  #b02338;   /* banner-red right edge — buttons & logo */
+  --teal-btn: #52d4d4;   /* banner-teal right edge — buttons & logo */
   --teal:   #5DA7A8;
   --teal-lt:#E8F2F2;
   --bg:     #FAFAF8;
@@ -58,10 +60,10 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.08); }
   height: 44px; width: 44px; display: block;
 }
 .nav-logo-text {
-  font-size: 1.25rem; font-weight: 700; color: var(--red);
+  font-size: 1.25rem; font-weight: 700; color: var(--red-btn);
   letter-spacing: -.02em;
 }
-.nav-logo-text em { color: var(--teal); font-style: normal; }
+.nav-logo-text em { color: var(--teal-btn); font-style: normal; }
 .nav-links { display: flex; gap: 2rem; list-style: none; }
 .nav-links a {
   text-decoration: none; color: var(--txt); font-size: .9rem; font-weight: 500;
@@ -69,11 +71,11 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.08); }
 }
 .nav-links a:hover { color: var(--teal); }
 .nav-cta {
-  background: var(--red); color: #fff !important;
+  background: var(--red-btn); color: #fff !important;
   padding: .45rem 1.1rem; border-radius: 8px;
   transition: background .2s !important;
 }
-.nav-cta:hover { background: var(--red-dk) !important; color: #fff !important; }
+.nav-cta:hover { background: var(--red) !important; color: #fff !important; }
 
 /* burger hidden by default */
 .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; border: none; background: none; padding: 4px; }
@@ -213,22 +215,22 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.08); }
 .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
 .btn-primary {
   display: inline-flex; align-items: center; gap: .5rem;
-  background: var(--red); color: #fff;
+  background: var(--red-btn); color: #fff;
   padding: .8rem 1.7rem; border-radius: 10px;
   font-weight: 600; font-size: .95rem; text-decoration: none;
   transition: background .2s, transform .15s;
 }
-.btn-primary:hover { background: var(--red-dk); transform: translateY(-1px); }
+.btn-primary:hover { background: var(--red); transform: translateY(-1px); }
 .btn-secondary {
   display: inline-flex; align-items: center; gap: .5rem;
-  background: var(--teal); color: #fff;
+  background: var(--teal-btn); color: #fff;
   padding: .8rem 1.7rem; border-radius: 10px;
   font-weight: 600; font-size: .95rem; text-decoration: none;
   border: 2px solid var(--teal);
   transition: background .2s, border-color .2s, transform .15s;
 }
 .btn-secondary:hover {
-  background: #4A8E8F; border-color: #4A8E8F;
+  background: #35bcbc; border-color: #35bcbc;
   transform: translateY(-1px);
 }
 .hero-scroll {
@@ -822,8 +824,8 @@ footer a:hover { color: #fff; }
     padding: .9rem 0; font-size: .92rem; font-weight: 600;
     text-decoration: none; color: #fff;
   }
-  .quick-contact a:first-child { background: var(--teal); }
-  .quick-contact a:last-child { background: var(--red); }
+  .quick-contact a:first-child { background: var(--teal-btn); }
+  .quick-contact a:last-child { background: var(--red-btn); }
   /* keep the bar from covering the footer's last line */
   body { padding-bottom: calc(50px + env(safe-area-inset-bottom)); }
 }
