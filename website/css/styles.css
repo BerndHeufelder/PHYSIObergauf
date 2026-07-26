@@ -28,8 +28,8 @@ body {
 :root {
   --red:    #8B1A2B;
   --red-dk: #6B1220;
-  --red-btn:  #b02338;   /* banner-red right edge — buttons & logo */
-  --teal-btn: #3cc6c6;   /* banner-teal right edge, leicht abgedunkelt — buttons & logo */
+  --red-btn:  #8B1A2B;   /* buttons & logo — zurück auf Original-Bordeaux */
+  --teal-btn: #5DA7A8;   /* buttons & logo — zurück auf Original-Türkis */
   --teal:   #5DA7A8;
   --teal-lt:#E8F2F2;
   --bg:     #FAFAF8;
@@ -75,7 +75,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.08); }
   padding: .45rem 1.1rem; border-radius: 8px;
   transition: background .2s !important;
 }
-.nav-cta:hover { background: var(--red) !important; color: #fff !important; }
+.nav-cta:hover { background: var(--red-dk) !important; color: #fff !important; }
 
 /* burger hidden by default */
 .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; border: none; background: none; padding: 4px; }
@@ -220,7 +220,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.08); }
   font-weight: 600; font-size: .95rem; text-decoration: none;
   transition: background .2s, transform .15s;
 }
-.btn-primary:hover { background: var(--red); transform: translateY(-1px); }
+.btn-primary:hover { background: var(--red-dk); transform: translateY(-1px); }
 .btn-secondary {
   display: inline-flex; align-items: center; gap: .5rem;
   background: var(--teal-btn); color: #fff;
@@ -230,7 +230,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.08); }
   transition: background .2s, border-color .2s, transform .15s;
 }
 .btn-secondary:hover {
-  background: #2da9a9; border-color: #2da9a9;
+  background: #4A8E8F; border-color: #4A8E8F;
   transform: translateY(-1px);
 }
 .hero-scroll {
