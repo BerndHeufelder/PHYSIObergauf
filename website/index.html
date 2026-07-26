@@ -113,9 +113,11 @@
   <!-- ── Willkommen ── -->
   <section id="willkommen">
     <div class="willkommen-content">
-      <div class="willkommen-text">
+      <div class="willkommen-head">
         <div class="section-label">Schön, dass du da bist</div>
         <h2 class="section-title willkommen-title">Willkommen in meiner Praxis für<br><em>Physiotherapie &amp; Heilmassage</em></h2>
+      </div>
+      <div class="willkommen-text">
         <p>In meiner Praxis stehst du und dein Wohlbefinden im Mittelpunkt. Mit gezielter Physiotherapie und wohltuenden Heilmassagen unterstütze ich dich dabei, Schmerzen zu lindern, Beweglichkeit zu verbessern und neue Kraft für den Alltag zu gewinnen.</p>
         <p>Ob nach Verletzungen, bei chronischen Beschwerden oder einfach zur Entspannung — ich nehme mir Zeit für dich und erstelle individuelle Behandlungspläne, die genau auf deine Bedürfnisse abgestimmt sind. Fachliche Kompetenz, persönliche Betreuung und eine angenehme Atmosphäre bilden die Grundlage meiner Arbeit.</p>
         <p class="willkommen-cta">Ich freue mich darauf, dich auf deinem Weg zu mehr Gesundheit und Lebensqualität zu begleiten.</p>
@@ -125,8 +127,10 @@
           alt="Heller Behandlungsraum der Praxis Physio Bergauf mit Therapieliege und Sprossenwand" />
       </div>
     </div>
-    <!-- kleine Praxis-Galerie: volle Sektionsbreite -->
-    <div class="willkommen-gallery">
+    <!-- kleine Praxis-Galerie: volle Sektionsbreite; mobil eingeklappt (Mehr zeigen) -->
+    <div class="willkommen-gallery" id="praxisGalerie">
+      <img src="img/galerie-fussmatte.jpg" width="1100" height="825" loading="lazy" decoding="async"
+        alt="Fußmatte mit der Aufschrift „herein spaziert" im Eingangsbereich" />
       <img src="img/galerie-eingang.jpg" width="765" height="1020" loading="lazy" decoding="async"
         alt="Eingangsbereich der Praxis Physio Bergauf mit Praxistür und Fußmatte" />
       <img src="img/galerie-tape-oele.jpg" width="1100" height="825" loading="lazy" decoding="async"
@@ -135,9 +139,8 @@
         alt="Infoflyer: Was ist Viszerale Therapie?" />
       <img src="img/galerie-beckenmodell.jpg" width="765" height="1020" loading="lazy" decoding="async"
         alt="Anatomisches Beckenmodell im Regal der Praxis" />
-      <img src="img/galerie-fussmatte.jpg" width="1100" height="825" loading="lazy" decoding="async"
-        alt="Fußmatte mit der Aufschrift „herein spaziert" im Eingangsbereich" />
     </div>
+    <button type="button" class="gallery-toggle" id="galleryToggle" aria-expanded="false" aria-controls="praxisGalerie">Mehr zeigen</button>
   </section>
 
   <!-- ── Über mich ── -->
@@ -149,8 +152,8 @@
       </div>
     </div>
     <div class="ueber-banner">
-      <img src="img/ueber-banner.jpg" width="1600" height="541" loading="lazy" decoding="async"
-        alt="Physiotherapie von Herzen – individuell, kompetent, mit Herz. Katharina Heufelder, Physio Bergauf" />
+      <img src="img/portrait_banner2.jpg" width="2000" height="501" loading="lazy" decoding="async"
+        alt="Kathi – Physiotherapeutin von Herzen, Physio Bergauf" />
     </div>
     <div class="ueber-grid">
       <div class="ueber-textcol">

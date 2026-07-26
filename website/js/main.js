@@ -42,6 +42,17 @@ if (navLogo) {
   });
 }
 
+// Praxis-Galerie: mobil eingeklappt, „Mehr zeigen" blendet die restlichen Bilder ein
+const galleryToggle = document.getElementById('galleryToggle');
+if (galleryToggle) {
+  const gallery = document.getElementById('praxisGalerie');
+  galleryToggle.addEventListener('click', () => {
+    const expanded = gallery.classList.toggle('expanded');
+    galleryToggle.textContent = expanded ? 'Weniger zeigen' : 'Mehr zeigen';
+    galleryToggle.setAttribute('aria-expanded', String(expanded));
+  });
+}
+
 // Nav shadow via IntersectionObserver (no per-frame scroll handler)
 const navbar = document.getElementById('navbar');
 const sentinel = document.getElementById('nav-sentinel');
