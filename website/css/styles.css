@@ -480,19 +480,20 @@ section { padding: 96px 5vw; }
   width: 100%; height: auto; display: block;
   aspect-ratio: 16/9; object-fit: cover;
 }
-/* zwei weitere Praxisfotos als Paar unter dem Raumfoto */
+/* kleine Praxis-Galerie: 5er-Leiste über die volle Sektionsbreite, kompaktes Raster mobil */
 .willkommen-gallery {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
-  margin-top: 1.25rem;
+  margin-top: 1.5rem;
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem;
 }
 .willkommen-gallery img {
-  width: 100%; display: block;
-  aspect-ratio: 3/4; object-fit: cover;
+  width: 100%; height: clamp(220px, 17vw, 320px); object-fit: cover; display: block;
   border-radius: var(--radius); box-shadow: var(--shadow);
 }
-@media (max-width: 640px) {
-  .willkommen-gallery { grid-template-columns: 1fr; }
-  .willkommen-gallery img { aspect-ratio: 4/5; }
+@media (max-width: 900px) {
+  .willkommen-gallery { grid-template-columns: 1fr 1fr; gap: .8rem; }
+  .willkommen-gallery img { height: auto; aspect-ratio: 1/1; }
+  /* Fußmatte als breiter Abschluss über beide Spalten */
+  .willkommen-gallery img:last-child { grid-column: span 2; aspect-ratio: 21/10; }
 }
 
 /* ── Über mich — Werdegang & Zusatzausbildungen ── */
