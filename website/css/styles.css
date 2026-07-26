@@ -210,7 +210,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.08); }
 }
 .trust-item svg { color: var(--teal); flex-shrink: 0; width: 14px; height: 14px; }
 
-.btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-group { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
 .btn-primary {
   display: inline-flex; align-items: center; gap: .5rem;
   background: var(--red); color: #fff;
@@ -806,28 +806,6 @@ footer a:hover { color: #fff; }
   .nav-links.open a { padding: 1rem 0; border-bottom: 1px solid rgba(0,0,0,.06); font-size: 1.1rem; }
   .burger { display: flex; }
 }
-
-/* ── Click-to-load map (DSGVO: no OSM request before consent) ── */
-.map-placeholder {
-  width: 100%; height: 100%;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: .9rem; text-align: center; padding: 2rem;
-  background: var(--teal-lt);
-}
-.map-placeholder svg { color: var(--red); }
-.map-placeholder strong { font-size: 1rem; color: var(--txt); }
-.map-placeholder p { font-size: .78rem; color: var(--muted); max-width: 340px; line-height: 1.55; margin: 0; }
-.map-placeholder a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
-.map-placeholder a:hover { color: var(--txt); }
-.map-placeholder button {
-  cursor: pointer; font-family: inherit;
-  display: inline-flex; align-items: center; gap: .5rem;
-  background: var(--teal); color: #fff; border: 2px solid var(--teal);
-  padding: .7rem 1.5rem; border-radius: 10px;
-  font-weight: 600; font-size: .9rem;
-  transition: background .2s, border-color .2s;
-}
-.map-placeholder button:hover { background: #4A8E8F; border-color: #4A8E8F; }
 
 /* ── Mobile quick-contact bar (tap to call / email) ── */
 .quick-contact { display: none; }

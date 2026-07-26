@@ -30,21 +30,6 @@ if (anfrageForm) {
   });
 }
 
-// Click-to-load OSM map — no request to openstreetmap.org before the visitor consents (DSGVO)
-const mapBtn = document.getElementById('mapLoadBtn');
-if (mapBtn) {
-  mapBtn.addEventListener('click', () => {
-    const wrap = document.getElementById('mapWrap');
-    const iframe = document.createElement('iframe');
-    iframe.title = 'Batschuns Karte';
-    iframe.src =
-      'https://www.openstreetmap.org/export/embed.html?bbox=9.6500%2C47.2750%2C9.6900%2C47.2850&layer=mapnik&marker=47.280372%2C9.666690';
-    iframe.loading = 'lazy';
-    iframe.allowFullscreen = true;
-    wrap.replaceChildren(iframe);
-  });
-}
-
 // Logo click on the start page: always scroll to the very top (no reload, no #-URL)
 const navLogo = document.querySelector('.nav-logo[href="#"]');
 if (navLogo) {

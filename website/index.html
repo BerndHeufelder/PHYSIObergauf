@@ -422,14 +422,13 @@
           </a>
         </div>
       </div>
-      <!-- click-to-load: no request to OpenStreetMap before the visitor consents (DSGVO) -->
-      <div class="map-wrap" id="mapWrap">
-        <div class="map-placeholder">
-          <svg width="34" height="34" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg>
-          <strong>Bazol 20, 6835 Batschuns</strong>
-          <button type="button" id="mapLoadBtn">Karte laden</button>
-          <p>Beim Laden der Karte werden Daten an OpenStreetMap (openstreetmap.org) übertragen. Details in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
-        </div>
+      <div class="map-wrap">
+        <iframe
+          title="Batschuns Karte"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=9.6500%2C47.2750%2C9.6900%2C47.2850&layer=mapnik&marker=47.280372%2C9.666690"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
       </div>
     </div>
 
