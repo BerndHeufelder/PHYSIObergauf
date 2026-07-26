@@ -433,8 +433,12 @@ section { padding: 96px 5vw; }
 }
 .fb-list li {
   font-size: .85rem; color: var(--muted); line-height: 1.45;
+  position: relative; padding-left: 1rem;
 }
-.fb-yr { color: var(--teal); font-weight: 700; font-size: .78rem; margin-right: .5rem; }
+.fb-list li::before {
+  content: ''; position: absolute; left: 0; top: .5em;
+  width: 6px; height: 6px; border-radius: 50%; background: var(--teal);
+}
 
 /* ── Willkommen ── */
 #willkommen { background: var(--bg2); padding: 96px 5vw 80px; }
