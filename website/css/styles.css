@@ -480,6 +480,20 @@ section { padding: 96px 5vw; }
   width: 100%; height: auto; display: block;
   aspect-ratio: 16/9; object-fit: cover;
 }
+/* zwei weitere Praxisfotos als Paar unter dem Raumfoto */
+.willkommen-gallery {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+.willkommen-gallery img {
+  width: 100%; display: block;
+  aspect-ratio: 3/4; object-fit: cover;
+  border-radius: var(--radius); box-shadow: var(--shadow);
+}
+@media (max-width: 640px) {
+  .willkommen-gallery { grid-template-columns: 1fr; }
+  .willkommen-gallery img { aspect-ratio: 4/5; }
+}
 
 /* ── Über mich — Werdegang & Zusatzausbildungen ── */
 .werdegang { margin-top: 2.2rem; }
@@ -612,6 +626,8 @@ section { padding: 96px 5vw; }
 .cat-card-img {
   width: 100%; height: 330px; object-fit: cover; display: block;
 }
+/* erste Karte (Bewegungstherapie): Ausschnitt oben — Kopf/Arme statt Körpermitte */
+.cat-card:first-child .cat-card-img { object-position: center top; }
 .cat-body { padding: 1.4rem; border-top: 3px solid var(--teal); }
 .cat-card h3 {
   font-size: 1rem; font-weight: 700; margin-bottom: .35rem; color: var(--txt);
