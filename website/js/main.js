@@ -20,8 +20,11 @@ if (anfrageForm) {
       status.textContent = 'Vielen Dank! Deine Anfrage wurde gesendet — ich melde mich so rasch wie möglich bei dir.';
       status.classList.add('ok');
     } catch (err) {
-      status.textContent =
-        'Senden fehlgeschlagen. Bitte versuch es später erneut oder kontaktiere mich direkt: +43 664 9624672 · therapie@physiobergauf.at';
+      // FormSubmit returns "This form needs Activation" until the one-time
+      // activation link (emailed to the practice) has been clicked
+      status.textContent = /activat/i.test(err && err.message ? err.message : '')
+        ? 'Das Formular ist gerade nicht verfügbar. Bitte kontaktiere mich direkt: +43 664 9624672 · therapie@physiobergauf.at'
+        : 'Senden fehlgeschlagen. Bitte versuch es später erneut oder kontaktiere mich direkt: +43 664 9624672 · therapie@physiobergauf.at';
       status.classList.add('err');
     } finally {
       btn.disabled = false;
