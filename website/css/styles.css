@@ -857,8 +857,19 @@ footer a:hover { color: #fff; }
     position: fixed; inset: 68px 0 0 0;
     background: #FAFAF8;
     padding: 2rem 5vw; z-index: 99;
+    overflow-y: auto;
   }
-  .nav-links.open a { padding: 1rem 0; border-bottom: 1px solid rgba(0,0,0,.06); font-size: 1.1rem; }
+  .nav-links.open li { width: 100%; }
+  /* block layout — inline anchors ignore vertical padding and overlap */
+  .nav-links.open a {
+    display: block;
+    padding: 1rem 0; border-bottom: 1px solid rgba(0,0,0,.06); font-size: 1.1rem;
+  }
+  .nav-links.open .nav-cta {
+    display: block; text-align: center;
+    margin-top: 1.5rem; padding: .9rem 1.1rem;
+    border-bottom: none; border-radius: 10px;
+  }
   .burger { display: flex; }
 }
 
