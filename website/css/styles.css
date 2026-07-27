@@ -339,6 +339,18 @@ section { padding: 96px 5vw; }
   background: linear-gradient(to bottom, rgba(0,0,0,.05) 0%, rgba(0,0,0,.18) 40%, rgba(0,0,0,.58) 100%);
 }
 
+/* Über-mich: Porträt-Bild direkt im roten Banner */
+.banner-ueber { height: 280px; }
+.banner-ueber img { object-position: center 30%; }
+.banner-ueber .section-banner-overlay {
+  background: linear-gradient(to bottom, rgba(92,15,28,.10) 0%, rgba(92,15,28,.30) 55%, rgba(92,15,28,.72) 100%);
+}
+@media (max-width: 640px) {
+  /* Handy: Bild raus, roter Verlauf zurück — rundes Porträt folgt darunter */
+  .banner-ueber { height: 200px; background: linear-gradient(135deg, #5c0f1c 0%, var(--red) 55%, #b02338 100%); }
+  .banner-ueber img { display: none; }
+}
+
 /* colour banners (no photo) */
 .banner-teal {
   background: linear-gradient(135deg, #1a9090 0%, var(--teal) 55%, #52d4d4 100%);
@@ -469,7 +481,9 @@ section { padding: 96px 5vw; }
     text-align: left;
   }
   .willkommen-head { grid-column: 1 / -1; text-align: center; margin-bottom: 2.2rem; }
-  .willkommen-content .willkommen-img { margin: 0; }
+  /* Reihenfolge im Markup: Bild vor Text — auf Widescreen bleibt Text links, Foto rechts */
+  .willkommen-content .willkommen-text { grid-column: 1; grid-row: 2; }
+  .willkommen-content .willkommen-img { grid-column: 2; grid-row: 2; margin: 0; }
 }
 .willkommen-title {
   font-size: clamp(1.9rem, 3.4vw, 2.8rem) !important;
@@ -493,7 +507,8 @@ section { padding: 96px 5vw; }
 }
 .willkommen-loc svg { color: var(--red); flex-shrink: 0; }
 .willkommen-img {
-  margin: 2.4rem auto 0;
+  /* Bild folgt direkt auf die Überschrift — Abstand nach unten zum Text */
+  margin: 0 auto 2.2rem;
   border-radius: var(--radius); overflow: hidden;
   box-shadow: var(--shadow);
 }
