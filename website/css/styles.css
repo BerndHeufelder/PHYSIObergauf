@@ -480,6 +480,9 @@ section { padding: 96px 5vw; }
   content: ''; position: absolute; left: 0; top: .5em;
   width: 6px; height: 6px; border-radius: 50%; background: var(--teal);
 }
+/* Werdegang-Timeline im selben Akkordeon-Stil (rechte Spalte) */
+.werdegang .fb { margin-top: 0; }
+.fb .vtl2 { padding: .2rem 1.2rem 1.2rem; }
 
 /* ── Willkommen ── */
 #willkommen { background: var(--bg2); padding: 96px 5vw 80px; }
