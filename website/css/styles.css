@@ -339,18 +339,6 @@ section { padding: 96px 5vw; }
   background: linear-gradient(to bottom, rgba(0,0,0,.05) 0%, rgba(0,0,0,.18) 40%, rgba(0,0,0,.58) 100%);
 }
 
-/* Über-mich: Porträt-Bild direkt im roten Banner */
-.banner-ueber { height: 280px; }
-.banner-ueber img { object-position: center 30%; }
-.banner-ueber .section-banner-overlay {
-  background: linear-gradient(to bottom, rgba(92,15,28,.10) 0%, rgba(92,15,28,.30) 55%, rgba(92,15,28,.72) 100%);
-}
-@media (max-width: 640px) {
-  /* Handy: Bild raus, roter Verlauf zurück — rundes Porträt folgt darunter */
-  .banner-ueber { height: 200px; background: linear-gradient(135deg, #5c0f1c 0%, var(--red) 55%, #b02338 100%); }
-  .banner-ueber img { display: none; }
-}
-
 /* colour banners (no photo) */
 .banner-teal {
   background: linear-gradient(135deg, #1a9090 0%, var(--teal) 55%, #52d4d4 100%);
@@ -409,17 +397,17 @@ section { padding: 96px 5vw; }
 }
 .ueber-portrait-float img {
   width: 100%; height: auto; display: block;
-  border-radius: 16px;
+  border-radius: 50%;
   box-shadow: var(--shadow);
 }
-/* türkiser Akzent-Rahmen, unten rechts versetzt */
+/* türkiser Akzent-Kreis, unten rechts versetzt */
 .ueber-portrait-float::before {
   content: '';
   position: absolute; bottom: -10px; right: -10px;
   width: 55%; height: 55%;
   background: var(--teal-lt);
   border: 3px solid var(--teal);
-  border-radius: 12px; z-index: -1;
+  border-radius: 50%; z-index: -1;
 }
 .ueber-quals { clear: both; }
 @media (max-width: 640px) {
