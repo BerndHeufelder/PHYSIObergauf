@@ -876,6 +876,8 @@ footer a:hover { color: #fff; }
 /* ── Mobile quick-contact bar (tap to call / email) ── */
 .quick-contact { display: none; }
 @media (max-width: 640px) {
+  /* hero CTA is redundant on phones — the quick-contact bar already offers it */
+  .hero-content .btn-primary { display: none; }
   .quick-contact {
     position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
     display: grid; grid-template-columns: 1fr 1fr;
