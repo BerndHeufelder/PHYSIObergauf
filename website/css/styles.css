@@ -104,11 +104,11 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.08); }
   content: '';
   position: absolute; inset: 0;
   transform: translateZ(0);
-  background: linear-gradient(160deg,
-    rgba(252,245,232,.22) 0%,
-    rgba(246,237,218,.18) 55%,
-    rgba(236,224,200,.15) 100%);
+  /* Ganzbild-Behandlung statt Text-Schatten — Variante HELL (Default) */
+  background: rgba(250,248,245,.55);
 }
+/* Variante DUNKEL (Vergleich via Toggle) */
+body.hero-dunkel .hero-bg::after { background: rgba(0,0,0,.40); }
 /* bottom fade — smooth transition into #willkommen (#F2F0ED) */
 .hero-bg::before {
   content: '';
@@ -133,10 +133,9 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.08); }
   text-align: center; max-width: 800px;
   transform: translateZ(0);   /* raster the blurred text-shadows once */
 }
-/* shared text-shadow on h1+p — white halo so dark text is readable on the image */
-.hero-content h1, .hero-content p {
-  text-shadow: 0 2px 12px rgba(255,255,255,.7), 0 1px 3px rgba(255,255,255,.5);
-}
+/* Lesbarkeit kommt vom Ganzbild-Overlay — keine Text-Schatten mehr */
+body.hero-dunkel .hero-content h1 { color: #fff; }
+body.hero-dunkel .hero-content h1 em { color: #EFB9C2; }
 /* Bold/M variant — giant Physio Bergauf headline */
 .hero-content h1 {
   font-size: clamp(3.4rem, 8vw, 7rem);
@@ -160,19 +159,17 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.08); }
   font-weight: 500;
   font-size: 1.12rem;
   max-width: 560px; margin-bottom: 2.2rem; line-height: 1.75;
-  text-shadow:
-    0 0 16px rgba(255,255,255,.8),
-    0 0 8px rgba(255,255,255,.7),
-    0 1px 2px rgba(255,255,255,.5);
 }
+body.hero-dunkel .hero-content p { color: rgba(255,255,255,.92); }
 /* hero location pin (Batschuns) under the headline */
 .hero-loc {
   display: inline-flex; align-items: center; gap: .4rem;
   margin: -.3rem 0 1.3rem;
   font-size: 1rem; font-weight: 700; color: #1A1A1A;
-  text-shadow: 0 0 12px rgba(255,255,255,.85), 0 1px 2px rgba(255,255,255,.7);
 }
+body.hero-dunkel .hero-loc { color: #fff; }
 .hero-loc svg { color: var(--red); flex-shrink: 0; }
+body.hero-dunkel .hero-loc svg { color: #EFB9C2; }
 
 /* hero quote — same look as the Über-mich quote (teal left border + italic, no box) */
 /* sits on the left, vertically aligned with the centered CTA buttons */
@@ -186,12 +183,11 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.08); }
   font-size: clamp(0.98rem, 1.2vw, 1.15rem); line-height: 1.5; color: #1A1A1A;
   padding: .4rem 0 .4rem 1.2rem;
   border-left: 3px solid var(--teal);
-  color: #E6E6E6; font-weight: 500;
-  text-shadow:
-    0 0 6px rgba(0,0,0,1),
-    0 0 12px rgba(0,0,0,.95),
-    0 0 20px rgba(0,0,0,.8),
-    0 0 34px rgba(0,0,0,.6);
+  font-weight: 500;
+}
+body.hero-dunkel .hero-quote-box {
+  color: #E6E6E6;
+  text-shadow: 0 1px 3px rgba(0,0,0,.35);
 }
 .hero-trust {
   display: flex; gap: 1.5rem; margin-top: 2rem; flex-wrap: wrap;
@@ -983,6 +979,19 @@ footer a:hover { color: #fff; }
 .link-card strong::after { content: ' ↗'; color: var(--teal); font-weight: 700; }
 .link-card span { font-size: .82rem; color: var(--muted); line-height: 1.55; }
 @media (max-width: 860px) { .links-grid { grid-template-columns: 1fr; } }
+
+/* ── TEMPORÄR: Hell/Dunkel-Vergleichsschalter für den Hero ── */
+.hero-ab-toggle {
+  position: fixed; left: 12px; bottom: 12px; z-index: 95;
+  background: #fff; color: var(--txt);
+  border: 1px solid rgba(0,0,0,.15); border-radius: 999px;
+  font: inherit; font-size: .78rem; font-weight: 600;
+  padding: .5rem .9rem; cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0,0,0,.18);
+}
+@media (max-width: 640px) {
+  .hero-ab-toggle { bottom: calc(58px + env(safe-area-inset-bottom)); }
+}
 
 /* ── Legal subpages (Impressum / Datenschutz) ── */
 .subpage { padding-top: calc(68px + 3.5rem); min-height: calc(100vh - 68px - 90px); }

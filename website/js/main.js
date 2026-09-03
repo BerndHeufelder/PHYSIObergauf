@@ -53,6 +53,15 @@ if (galleryToggle) {
   });
 }
 
+// TEMPORÄR: Hell/Dunkel-Vergleich für das Hero-Overlay
+const heroAb = document.getElementById('heroAbToggle');
+if (heroAb) {
+  heroAb.addEventListener('click', () => {
+    const dark = document.body.classList.toggle('hero-dunkel');
+    heroAb.textContent = dark ? 'Hero: Dunkel ⇄' : 'Hero: Hell ⇄';
+  });
+}
+
 // Nav shadow via IntersectionObserver (no per-frame scroll handler)
 const navbar = document.getElementById('navbar');
 const sentinel = document.getElementById('nav-sentinel');
