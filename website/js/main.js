@@ -53,12 +53,17 @@ if (galleryToggle) {
   });
 }
 
-// TEMPORÄR: Hell/Dunkel-Vergleich für das Hero-Overlay
+// TEMPORÄR: Hell/Dunkel/Original-Vergleich für das Hero-Overlay
 const heroAb = document.getElementById('heroAbToggle');
 if (heroAb) {
+  const modes = ['hell', 'dunkel', 'original'];
+  const labels = { hell: 'Hero: Hell ⇄', dunkel: 'Hero: Dunkel ⇄', original: 'Hero: Original ⇄' };
+  let mode = 'hell';
   heroAb.addEventListener('click', () => {
-    const dark = document.body.classList.toggle('hero-dunkel');
-    heroAb.textContent = dark ? 'Hero: Dunkel ⇄' : 'Hero: Hell ⇄';
+    mode = modes[(modes.indexOf(mode) + 1) % modes.length];
+    document.body.classList.toggle('hero-dunkel', mode === 'dunkel');
+    document.body.classList.toggle('hero-original', mode === 'original');
+    heroAb.textContent = labels[mode];
   });
 }
 
