@@ -165,7 +165,7 @@ body.hero-dunkel .hero-content p { color: rgba(255,255,255,.92); }
 /* hero location pin (Batschuns) under the headline */
 .hero-loc {
   display: inline-flex; align-items: center; gap: .4rem;
-  margin: -.3rem 0 1.3rem;
+  margin: -.3rem 0 2.2rem;   /* Abstand des entfernten Willkommens-Satzes übernehmen */
   font-size: 1rem; font-weight: 700; color: #1A1A1A;
 }
 body.hero-dunkel .hero-loc { color: #fff; }
