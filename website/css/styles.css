@@ -105,10 +105,11 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.08); }
   position: absolute; inset: 0;
   transform: translateZ(0);
   /* Ganzbild-Behandlung statt Text-Schatten — Variante HELL (Default) */
-  background: rgba(250,248,245,.55);
+  /* Stärke via --hero-ab-overlay vom Vergleichsschalter steuerbar */
+  background: var(--hero-ab-overlay, rgba(250,248,245,.50));
 }
 /* Variante DUNKEL (Vergleich via Toggle) */
-body.hero-dunkel .hero-bg::after { background: rgba(0,0,0,.40); }
+body.hero-dunkel .hero-bg::after { background: var(--hero-ab-overlay, rgba(0,0,0,.40)); }
 /* bottom fade — smooth transition into #willkommen (#F2F0ED) */
 .hero-bg::before {
   content: '';
