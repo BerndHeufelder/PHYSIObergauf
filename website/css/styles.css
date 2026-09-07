@@ -410,7 +410,9 @@ section { padding: 96px 5vw; }
   .ueber-head { order: 0; }
   .ueber-text { order: 1; }
   .ueber-timelinecol { order: 2; }
-  .fb { order: 3; }
+  /* Akkordeon-Paar kompakt: Grid-Gap + margin-top ergaben ~72px Abstand
+     (höhere Spezifität nötig — die Basis-Regel .fb steht später im File) */
+  .ueber-textcol > .fb { order: 3; margin-top: -1.4rem; }
 }
 
 /* ── Fortbildungen — expandable list (left column) ── */
@@ -868,6 +870,13 @@ footer a:hover { color: #fff; }
   .hero-scroll { display: none; }
 }
 @media (max-width: 640px) {
+  /* Handy: Nav ohne Logo, transparent über dem Hero — nur Burger rechts */
+  .nav-logo { display: none; }
+  nav { background: transparent; border-bottom: 0; }
+  nav.scrolled { background: rgba(250,250,248,.97); border-bottom: 1px solid rgba(0,0,0,.06); }
+  .burger { margin-left: auto; }
+  /* Hero hochziehen: Bild reicht bis ganz oben, Inhalt startet höher */
+  #hero { padding: 90px 5vw 140px; }
   .nav-links { display: none; }
   .nav-links.open {
     display: flex; flex-direction: column; gap: 0;
