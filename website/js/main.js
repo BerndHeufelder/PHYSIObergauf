@@ -53,36 +53,6 @@ if (galleryToggle) {
   });
 }
 
-// TEMPORÄR: Hero-Overlay-Vergleich — Hell/Dunkel in 10%-Stufen + Original
-const heroAb = document.getElementById('heroAbToggle');
-if (heroAb) {
-  const modes = [
-    { label: 'Hell 30%', cls: '', overlay: 'rgba(250,248,245,.30)' },
-    { label: 'Hell 40%', cls: '', overlay: 'rgba(250,248,245,.40)' },
-    { label: 'Hell 50%', cls: '', overlay: 'rgba(250,248,245,.50)' },
-    { label: 'Hell 60%', cls: '', overlay: 'rgba(250,248,245,.60)' },
-    { label: 'Dunkel 20%', cls: 'hero-dunkel', overlay: 'rgba(0,0,0,.20)' },
-    { label: 'Dunkel 30%', cls: 'hero-dunkel', overlay: 'rgba(0,0,0,.30)' },
-    { label: 'Dunkel 40%', cls: 'hero-dunkel', overlay: 'rgba(0,0,0,.40)' },
-    { label: 'Dunkel 50%', cls: 'hero-dunkel', overlay: 'rgba(0,0,0,.50)' },
-    { label: 'Original', cls: 'hero-original', overlay: '' },
-  ];
-  let idx = 2; // Start: Hell 50%
-  const apply = () => {
-    const m = modes[idx];
-    document.body.classList.toggle('hero-dunkel', m.cls === 'hero-dunkel');
-    document.body.classList.toggle('hero-original', m.cls === 'hero-original');
-    if (m.overlay) document.body.style.setProperty('--hero-ab-overlay', m.overlay);
-    else document.body.style.removeProperty('--hero-ab-overlay');
-    heroAb.textContent = 'Hero: ' + m.label + ' ⇄';
-  };
-  apply();
-  heroAb.addEventListener('click', () => {
-    idx = (idx + 1) % modes.length;
-    apply();
-  });
-}
-
 // Nav shadow via IntersectionObserver (no per-frame scroll handler)
 const navbar = document.getElementById('navbar');
 const sentinel = document.getElementById('nav-sentinel');
