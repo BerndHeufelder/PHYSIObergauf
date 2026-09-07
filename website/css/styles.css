@@ -157,8 +157,13 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.08); }
 /* hero location pin (Batschuns) under the headline */
 .hero-loc {
   display: inline-flex; align-items: center; gap: .4rem;
-  margin: -.3rem 0 2.2rem;   /* Abstand des entfernten Willkommens-Satzes übernehmen */
+  margin: -.3rem 0 .35rem;
   font-size: 1rem; font-weight: 700; color: #1A1A1A;
+}
+/* Name direkt unter der Ortsangabe — man weiß sofort, dass man richtig ist */
+.hero-name {
+  font-size: .95rem; font-weight: 500; color: #1A1A1A;
+  margin-bottom: 2.2rem;
 }
 .hero-loc svg { color: var(--red); flex-shrink: 0; }
 
