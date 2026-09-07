@@ -876,10 +876,15 @@ footer a:hover { color: #fff; }
 }
 @media (max-width: 900px) {
   .hero-quote-box {
-    position: static; top: auto; transform: none;
+    position: static; top: auto;
+    /* wandert mit dem um -7vh angehobenen Hero-Inhalt mit */
+    transform: translateY(-7vh);
     margin: 1.5rem auto 0; width: 100%;
   }
   .hero-scroll { display: none; }
+  /* Läufer mittig zwischen Batschuns und Quote: oben wie unten 1.5rem */
+  .hero-loc { margin-bottom: 0; }
+  .hero-art { margin: 1.5rem 0 0; }
 }
 @media (max-width: 640px) {
   /* Handy: Nav transparent über dem Hero — Logo erscheint erst nach dem Hero (JS) */
@@ -888,7 +893,6 @@ footer a:hover { color: #fff; }
   .burger { margin-left: auto; }
   /* Hero hochziehen: Bild reicht bis ganz oben, Inhalt startet höher */
   #hero { padding: 90px 5vw 140px; }
-  .hero-loc { margin-bottom: .8rem; }
   .nav-links { display: none; }
   .nav-links.open {
     display: flex; flex-direction: column; gap: 0;
