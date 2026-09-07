@@ -33,17 +33,65 @@ if (anfrageForm) {
   });
 }
 
-// Nav-Logo + Wortmarke erst zeigen, wenn der Hero (fast) aus dem Bild ist
-const heroSection = document.getElementById('hero');
-const navLogoEl = document.querySelector('.nav-logo');
-if (heroSection && navLogoEl) {
-  const updateNavLogo = () => {
-    const r = heroSection.getBoundingClientRect();
-    const visible = Math.max(0, Math.min(r.bottom, innerHeight) - Math.max(r.top, 0));
-    navLogoEl.classList.toggle('logo-waiting', visible > innerHeight * 0.12);
+// Nav-Logo + Wortmarke im Hero ausblenden — sie erscheinen zusammen mit der
+// Leiste, sobald gescrollt wird (Sichtbarkeit steuert nav.scrolled im CSS)
+if (document.getElementById('hero')) {
+  const navLogoEl = document.querySelector('.nav-logo');
+  if (navLogoEl) navLogoEl.classList.add('logo-waiting');
+}
+
+// Sanfte Scroll-Einblendungen (einmalig, dezent; respektiert reduced motion)
+const revealTargets = document.querySelectorAll(
+  '.willkommen-head, .willkommen-img, .willkommen-text, .fakten-item, ' +
+  '.ueber-grid > *, .leistungen-intro, .cat-card, .zusatz, .step, .ablauf-card, ' +
+  '.kontakt-grid > *, .anfrage, .link-card'
+);
+if ('IntersectionObserver' in window && revealTargets.length) {
+  const revealIo = new IntersectionObserver(
+    (entries) => entries.forEach((e) => {
+      if (e.isIntersecting) { e.target.classList.add('in'); revealIo.unobserve(e.target); }
+    }),
+    { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
+  );
+  revealTargets.forEach((el) => { el.classList.add('reveal'); revealIo.observe(el); });
+}
+
+// Galerie-Lightbox (Praxisfotos groß ansehen)
+const lbSources = [...document.querySelectorAll('.willkommen-gallery img, .willkommen-img img')];
+if (lbSources.length) {
+  const lb = document.createElement('div');
+  lb.className = 'lightbox';
+  lb.hidden = true;
+  lb.innerHTML =
+    '<button class="lb-close" aria-label="Schließen">✕</button>' +
+    '<button class="lb-prev" aria-label="Vorheriges Bild">‹</button>' +
+    '<img alt="" />' +
+    '<button class="lb-next" aria-label="Nächstes Bild">›</button>';
+  document.body.appendChild(lb);
+  const lbImg = lb.querySelector('img');
+  let lbIdx = 0;
+  const lbShow = (i) => {
+    lbIdx = (i + lbSources.length) % lbSources.length;
+    lbImg.src = lbSources[lbIdx].src;
+    lbImg.alt = lbSources[lbIdx].alt;
+    lb.hidden = false;
+    document.body.style.overflow = 'hidden';
   };
-  updateNavLogo();
-  addEventListener('scroll', updateNavLogo, { passive: true });
+  const lbHide = () => { lb.hidden = true; document.body.style.overflow = ''; };
+  lbSources.forEach((img, i) => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', () => lbShow(i));
+  });
+  lb.querySelector('.lb-close').addEventListener('click', lbHide);
+  lb.querySelector('.lb-prev').addEventListener('click', (e) => { e.stopPropagation(); lbShow(lbIdx - 1); });
+  lb.querySelector('.lb-next').addEventListener('click', (e) => { e.stopPropagation(); lbShow(lbIdx + 1); });
+  lb.addEventListener('click', (e) => { if (e.target === lb) lbHide(); });
+  addEventListener('keydown', (e) => {
+    if (lb.hidden) return;
+    if (e.key === 'Escape') lbHide();
+    if (e.key === 'ArrowLeft') lbShow(lbIdx - 1);
+    if (e.key === 'ArrowRight') lbShow(lbIdx + 1);
+  });
 }
 
 // Logo click on the start page: always scroll to the very top (no reload, no #-URL)

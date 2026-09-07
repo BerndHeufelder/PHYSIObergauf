@@ -57,8 +57,10 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.08); }
   text-decoration: none;
   transition: opacity .3s;
 }
-/* im Hero ausgeblendet (JS setzt die Klasse auf Seiten mit Hero) */
+/* im Hero ausgeblendet (JS setzt die Klasse auf Seiten mit Hero);
+   erscheint zusammen mit der Leiste, sobald gescrollt wird (nav.scrolled) */
 .nav-logo.logo-waiting { opacity: 0; pointer-events: none; }
+nav.scrolled .nav-logo.logo-waiting { opacity: 1; pointer-events: auto; }
 .nav-logo img {
   height: 44px; width: 44px; display: block;
 }
@@ -180,12 +182,6 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.08); }
   padding: .4rem 0 .4rem 1.2rem;
   border-left: 3px solid var(--teal);
   font-weight: 500;
-}
-/* Trust-Zeile — schlichter Text statt Glass-Pills */
-.hero-trust {
-  margin-top: 2.2rem;
-  font-size: .88rem; font-weight: 600; color: #1A1A1A;
-  letter-spacing: .02em; text-align: center; line-height: 1.9;
 }
 
 .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
@@ -709,7 +705,11 @@ section { padding: 96px 5vw; }
 @media (max-width: 860px) { .cat-grid { grid-template-columns: 1fr; } }
 
 /* ── Ablauf ── */
-#ablauf { background: var(--red); color: #fff; }
+#ablauf {
+  background: var(--red); color: #fff;
+  /* weiche Kanten oben/unten statt hartem Farbwechsel */
+  box-shadow: inset 0 46px 60px -46px rgba(0,0,0,.28), inset 0 -46px 60px -46px rgba(0,0,0,.2);
+}
 #ablauf .section-label { color: rgba(255,255,255,.6); }
 #ablauf .section-title { color: #fff; }
 #ablauf .section-sub { color: rgba(255,255,255,.7); }
@@ -881,9 +881,7 @@ footer a:hover { color: #fff; }
   .burger { margin-left: auto; }
   /* Hero hochziehen: Bild reicht bis ganz oben, Inhalt startet höher */
   #hero { padding: 90px 5vw 140px; }
-  /* ohne Buttons ist der Abstand Batschuns -> Trust-Zeile sonst zu groß */
   .hero-loc { margin-bottom: .8rem; }
-  .hero-trust { margin-top: 1.1rem; }
   .nav-links { display: none; }
   .nav-links.open {
     display: flex; flex-direction: column; gap: 0;
@@ -989,6 +987,59 @@ footer a:hover { color: #fff; }
 .link-card strong::after { content: ' ↗'; color: var(--teal); font-weight: 700; }
 .link-card span { font-size: .82rem; color: var(--muted); line-height: 1.55; }
 @media (max-width: 860px) { .links-grid { grid-template-columns: 1fr; } }
+
+/* ── Fakten-Streifen ── */
+#fakten {
+  background: var(--bg);
+  padding: 2.4rem 5vw;
+  border-top: 1px solid rgba(0,0,0,.04);
+  border-bottom: 1px solid rgba(0,0,0,.04);
+}
+.fakten-grid {
+  max-width: 900px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+  text-align: center;
+}
+.fakten-item strong {
+  display: block;
+  font-size: clamp(1.7rem, 3.4vw, 2.4rem); font-weight: 800;
+  color: var(--red); letter-spacing: -.02em; line-height: 1.15;
+}
+.fakten-item span { font-size: .85rem; color: var(--muted); font-weight: 500; }
+@media (max-width: 640px) {
+  .fakten-grid { gap: .6rem; }
+  .fakten-item span { font-size: .76rem; }
+}
+
+/* ── Sanfte Scroll-Einblendungen (JS setzt .reveal / .in) ── */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ── Galerie-Lightbox ── */
+.lightbox {
+  position: fixed; inset: 0; z-index: 200;
+  background: rgba(0,0,0,.88);
+  display: flex; align-items: center; justify-content: center;
+}
+.lightbox[hidden] { display: none; }
+.lightbox img {
+  max-width: 92vw; max-height: 86vh;
+  border-radius: 10px; box-shadow: 0 20px 60px rgba(0,0,0,.5);
+}
+.lightbox button {
+  position: absolute; z-index: 1;
+  background: rgba(255,255,255,.14); color: #fff;
+  border: none; cursor: pointer; border-radius: 999px;
+  width: 44px; height: 44px; font-size: 1.35rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.lightbox button:hover { background: rgba(255,255,255,.28); }
+.lb-close { top: 16px; right: 16px; }
+.lb-prev { left: 12px; top: 50%; transform: translateY(-50%); }
+.lb-next { right: 12px; top: 50%; transform: translateY(-50%); }
 
 /* ── Legal subpages (Impressum / Datenschutz) ── */
 .subpage { padding-top: calc(68px + 3.5rem); min-height: calc(100vh - 68px - 90px); }
