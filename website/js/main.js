@@ -33,6 +33,41 @@ if (anfrageForm) {
   });
 }
 
+// TEMPORÄR: Logo-Varianten-Vergleich im Hero
+const logoAb = document.getElementById('logoAbToggle');
+if (logoAb) {
+  const logo = document.getElementById('heroLogo');
+  const modes = [
+    { label: 'Gefüllt 60%', src: 'img/logo-fill-trans.png', op: 0.6 },
+    { label: 'Gefüllt 35%', src: 'img/logo-fill-trans.png', op: 0.35 },
+    { label: 'Weiß', src: 'img/logo-white.png', op: 0.85 },
+    { label: 'Umrisse', src: 'img/logo-outline.png?v=2', op: 1 },
+    { label: 'Ohne Logo', src: '', op: 0 },
+  ];
+  let idx = 0;
+  const apply = () => {
+    const m = modes[idx];
+    if (m.src) { logo.src = m.src; logo.style.opacity = m.op; logo.style.display = ''; }
+    else logo.style.display = 'none';
+    logoAb.textContent = 'Logo: ' + m.label + ' ⇄';
+  };
+  apply();
+  logoAb.addEventListener('click', () => { idx = (idx + 1) % modes.length; apply(); });
+}
+
+// Nav-Logo + Wortmarke erst zeigen, wenn der Hero (fast) aus dem Bild ist
+const heroSection = document.getElementById('hero');
+const navLogoEl = document.querySelector('.nav-logo');
+if (heroSection && navLogoEl) {
+  const updateNavLogo = () => {
+    const r = heroSection.getBoundingClientRect();
+    const visible = Math.max(0, Math.min(r.bottom, innerHeight) - Math.max(r.top, 0));
+    navLogoEl.classList.toggle('logo-waiting', visible > innerHeight * 0.12);
+  };
+  updateNavLogo();
+  addEventListener('scroll', updateNavLogo, { passive: true });
+}
+
 // Logo click on the start page: always scroll to the very top (no reload, no #-URL)
 const navLogo = document.querySelector('.nav-logo[href="#"]');
 if (navLogo) {
