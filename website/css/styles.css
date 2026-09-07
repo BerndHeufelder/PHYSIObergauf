@@ -134,7 +134,8 @@ nav.scrolled .nav-logo.logo-waiting { opacity: 1; pointer-events: auto; }
   position: relative; z-index: 1;
   display: flex; flex-direction: column; align-items: center;
   text-align: center; max-width: 800px;
-  transform: translateZ(0);   /* raster the blurred text-shadows once */
+  /* Inhalt sichtbar über die Mitte anheben (+ Compositor-Layer) */
+  transform: translateY(-7vh) translateZ(0);
 }
 /* Logo über der Headline — gefüllt ohne Weiß, 60% Deckkraft */
 .hero-logo-outline {
