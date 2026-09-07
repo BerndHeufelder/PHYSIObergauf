@@ -131,6 +131,11 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.08); }
   text-align: center; max-width: 800px;
   transform: translateZ(0);   /* raster the blurred text-shadows once */
 }
+/* Logo als reine Umriss-Grafik über der Headline */
+.hero-logo-outline {
+  width: clamp(88px, 12vw, 130px); height: auto;
+  margin-bottom: 1.6rem;
+}
 /* Lesbarkeit kommt vom Ganzbild-Overlay — keine Text-Schatten mehr */
 /* Bold/M variant — giant Physio Bergauf headline */
 .hero-content h1 {
