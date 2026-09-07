@@ -33,28 +33,6 @@ if (anfrageForm) {
   });
 }
 
-// TEMPORÄR: Logo-Varianten-Vergleich im Hero
-const logoAb = document.getElementById('logoAbToggle');
-if (logoAb) {
-  const logo = document.getElementById('heroLogo');
-  const modes = [
-    { label: 'Gefüllt 60%', src: 'img/logo-fill-trans.png', op: 0.6 },
-    { label: 'Gefüllt 35%', src: 'img/logo-fill-trans.png', op: 0.35 },
-    { label: 'Weiß', src: 'img/logo-white.png', op: 0.85 },
-    { label: 'Umrisse', src: 'img/logo-outline.png?v=2', op: 1 },
-    { label: 'Ohne Logo', src: '', op: 0 },
-  ];
-  let idx = 0;
-  const apply = () => {
-    const m = modes[idx];
-    if (m.src) { logo.src = m.src; logo.style.opacity = m.op; logo.style.display = ''; }
-    else logo.style.display = 'none';
-    logoAb.textContent = 'Logo: ' + m.label + ' ⇄';
-  };
-  apply();
-  logoAb.addEventListener('click', () => { idx = (idx + 1) % modes.length; apply(); });
-}
-
 // Nav-Logo + Wortmarke erst zeigen, wenn der Hero (fast) aus dem Bild ist
 const heroSection = document.getElementById('hero');
 const navLogoEl = document.querySelector('.nav-logo');

@@ -134,10 +134,12 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.08); }
   text-align: center; max-width: 800px;
   transform: translateZ(0);   /* raster the blurred text-shadows once */
 }
-/* Logo als reine Umriss-Grafik über der Headline */
+/* Logo über der Headline — gefüllt ohne Weiß, 60% Deckkraft */
 .hero-logo-outline {
   width: clamp(88px, 12vw, 130px); height: auto;
-  margin-bottom: 1.6rem;
+  opacity: .6;
+  /* größerer Abstand nach unten rückt das Logo (zentriertes Layout) etwas höher */
+  margin-bottom: 2.6rem;
 }
 /* Lesbarkeit kommt vom Ganzbild-Overlay — keine Text-Schatten mehr */
 /* Bold/M variant — giant Physio Bergauf headline */
@@ -879,6 +881,9 @@ footer a:hover { color: #fff; }
   .burger { margin-left: auto; }
   /* Hero hochziehen: Bild reicht bis ganz oben, Inhalt startet höher */
   #hero { padding: 90px 5vw 140px; }
+  /* ohne Buttons ist der Abstand Batschuns -> Trust-Zeile sonst zu groß */
+  .hero-loc { margin-bottom: .8rem; }
+  .hero-trust { margin-top: 1.1rem; }
   .nav-links { display: none; }
   .nav-links.open {
     display: flex; flex-direction: column; gap: 0;
@@ -984,19 +989,6 @@ footer a:hover { color: #fff; }
 .link-card strong::after { content: ' ↗'; color: var(--teal); font-weight: 700; }
 .link-card span { font-size: .82rem; color: var(--muted); line-height: 1.55; }
 @media (max-width: 860px) { .links-grid { grid-template-columns: 1fr; } }
-
-/* ── TEMPORÄR: Vergleichsschalter (Logo-Varianten im Hero) ── */
-.hero-ab-toggle {
-  position: fixed; left: 12px; bottom: 12px; z-index: 95;
-  background: #fff; color: var(--txt);
-  border: 1px solid rgba(0,0,0,.15); border-radius: 999px;
-  font: inherit; font-size: .78rem; font-weight: 600;
-  padding: .5rem .9rem; cursor: pointer;
-  box-shadow: 0 4px 14px rgba(0,0,0,.18);
-}
-@media (max-width: 640px) {
-  .hero-ab-toggle { bottom: calc(70px + env(safe-area-inset-bottom)); }
-}
 
 /* ── Legal subpages (Impressum / Datenschutz) ── */
 .subpage { padding-top: calc(68px + 3.5rem); min-height: calc(100vh - 68px - 90px); }
