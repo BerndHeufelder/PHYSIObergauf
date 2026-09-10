@@ -17,7 +17,7 @@
   <meta property="og:url" content="https://berndheufelder.github.io/PHYSIObergauf/" />
   <meta property="og:locale" content="de_AT" />
   <!-- fonts are self-hosted via css/styles.css (no Google Fonts requests) -->
-  <link rel="stylesheet" href="css/styles.css?v=40" />
+  <link rel="stylesheet" href="css/styles.css?v=41" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -95,8 +95,9 @@
                  C606 73 612 71 618 66
                  C640 84 664 112 686 138"
               stroke="#1A1A1A" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
-        <!-- Name als Unterzeile — textLength spannt ihn exakt auf Linienbreite -->
-        <text class="hero-art-name" x="10" y="243" textLength="676" lengthAdjust="spacing">KATHARINA HEUFELDER</text>
+        <!-- Name-Varianten (Toggle unten links): A breit unter der Linie, B unterm Berg rechts -->
+        <text class="hero-art-name art-name-a" x="10" y="243" textLength="676" lengthAdjust="spacing">KATHARINA HEUFELDER</text>
+        <text class="hero-art-name art-name-b" x="686" y="208" text-anchor="end" textLength="346" lengthAdjust="spacing">KATHARINA HEUFELDER</text>
       </svg>
       <div class="btn-group">
         <a href="#terminanfrage" class="btn-primary">
@@ -575,5 +576,16 @@
   </div>
 
   <script defer src="js/main.js?v=13"></script>
+  <!-- TEMPORÄR: Umschalter Name-Position -->
+  <button class="name-ab-toggle" id="nameAb" type="button">Name: Breit ⇄</button>
+  <script>
+    (function () {
+      var btn = document.getElementById('nameAb');
+      btn.addEventListener('click', function () {
+        var b = document.body.classList.toggle('hero-name-b');
+        btn.textContent = b ? 'Name: Unterm Berg ⇄' : 'Name: Breit ⇄';
+      });
+    })();
+  </script>
 </body>
 </html>

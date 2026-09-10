@@ -173,11 +173,23 @@ nav.scrolled .nav-logo.logo-waiting { opacity: 1; pointer-events: auto; }
   margin: -0.4rem 0 1.4rem;
   opacity: .85;
 }
-/* Name als Unterzeile der Berg-Linie — textLength streckt auf exakte Linienbreite */
+/* Name in der Berg-Linie — schwarz, Strichstärke wie die Linienzeichnung (Gewicht 500) */
 .hero-art-name {
-  fill: rgba(26,26,26,.78);
-  font-family: 'Inter', sans-serif; font-size: 38px; font-weight: 650;
+  fill: #1A1A1A;
+  font-family: 'Inter', sans-serif; font-weight: 500;
 }
+.art-name-a { font-size: 38px; }
+.art-name-b { font-size: 28px; display: none; }
+body.hero-name-b .art-name-a { display: none; }
+body.hero-name-b .art-name-b { display: block; }
+/* TEMPORÄR: Umschalter */
+.name-ab-toggle {
+  position: fixed; left: 14px; bottom: 14px; z-index: 300;
+  background: #1A1A1A; color: #fff; border: 0; cursor: pointer;
+  font: 600 .78rem/1 'Inter', sans-serif; padding: .62rem 1rem; border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(0,0,0,.25);
+}
+@media (max-width: 640px) { .name-ab-toggle { bottom: calc(90px + env(safe-area-inset-bottom)); } }
 /* hero location pin (Batschuns) under the headline */
 .hero-loc {
   display: inline-flex; align-items: center; gap: .4rem;
@@ -191,7 +203,7 @@ nav.scrolled .nav-logo.logo-waiting { opacity: 1; pointer-events: auto; }
 .hero-quote-box {
   position: absolute; left: 5vw; right: auto;
   top: 50%; bottom: auto; transform: translateY(-50%) translateZ(0);
-  margin: 175px 0 0; z-index: 2;
+  margin: 220px 0 0; z-index: 2;
   width: min(340px, calc(50% - 224px - 5vw));
   text-align: left;
   font-family: Georgia, 'Times New Roman', serif; font-style: italic;
