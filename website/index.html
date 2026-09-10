@@ -17,7 +17,7 @@
   <meta property="og:url" content="https://berndheufelder.github.io/PHYSIObergauf/" />
   <meta property="og:locale" content="de_AT" />
   <!-- fonts are self-hosted via css/styles.css (no Google Fonts requests) -->
-  <link rel="stylesheet" href="css/styles.css?v=44" />
+  <link rel="stylesheet" href="css/styles.css?v=45" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -80,6 +80,10 @@
       </div>
       <!-- Puls-Linie geht in Bergsilhouette über — Gesundheit trifft Bergauf -->
       <svg class="hero-art" viewBox="0 0 700 252" fill="none" aria-hidden="true">
+        <defs>
+          <!-- glatte, sanft ansteigende Leitlinie unter dem Berghang für den Namenszug -->
+          <path id="bergverlauf" d="M318 200 C430 194 545 170 648 130" />
+        </defs>
         <path d="M10 185 H68
                  Q76 170 84 185 H118
                  L128 192 L140 100 L152 208 L162 185 H188
@@ -97,7 +101,7 @@
               stroke="#1A1A1A" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
         <!-- Name-Varianten (Toggle unten links): A breit unter der Linie, B unterm Berg rechts -->
         <text class="hero-art-name art-name-a" x="10" y="243" textLength="676" lengthAdjust="spacing">KATHARINA HEUFELDER</text>
-        <text class="hero-art-name art-name-b" x="686" y="185" text-anchor="end" textLength="346" lengthAdjust="spacing">KATHARINA HEUFELDER</text>
+        <text class="hero-art-name art-name-b" textLength="330" lengthAdjust="spacing"><textPath href="#bergverlauf" startOffset="0">KATHARINA HEUFELDER</textPath></text>
       </svg>
       <div class="btn-group">
         <a href="#terminanfrage" class="btn-primary">

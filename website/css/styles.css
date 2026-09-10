@@ -179,7 +179,7 @@ nav.scrolled .nav-logo.logo-waiting { opacity: 1; pointer-events: auto; }
   font-family: 'Inter', sans-serif; font-weight: 500;
 }
 .art-name-a { font-size: 38px; }
-.art-name-b { font-size: 28px; display: none; }
+.art-name-b { font-size: 27px; display: none; }
 body.hero-name-b .art-name-a { display: none; }
 body.hero-name-b .art-name-b { display: block; }
 body.hero-no-quote .hero-quote-box { display: none; }
@@ -204,7 +204,7 @@ body.hero-no-quote .hero-quote-box { display: none; }
 .hero-quote-box {
   position: absolute; left: 5vw; right: auto;
   top: 50%; bottom: auto; transform: translateY(-50%) translateZ(0);
-  margin: 220px 0 0; z-index: 2;
+  margin: 175px 0 0; z-index: 2;
   width: min(340px, calc(50% - 224px - 5vw));
   text-align: left;
   font-family: Georgia, 'Times New Roman', serif; font-style: italic;
@@ -987,7 +987,7 @@ footer a:hover { color: #fff; }
     position: static; top: auto;
     /* bewusst NICHT mit angehoben — Zitat sitzt tiefer, mit Luft zur Linie */
     transform: none;
-    margin: 3rem auto 0; width: 100%;
+    margin: 1.5rem auto 0; width: 100%;
   }
   .hero-scroll { display: none; }
   /* Läufer mittig zwischen Batschuns und Quote: oben wie unten 1.5rem */
