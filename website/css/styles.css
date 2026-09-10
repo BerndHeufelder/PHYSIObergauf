@@ -312,6 +312,10 @@ section { padding: 96px 5vw; }
   filter: drop-shadow(0 2px 5px rgba(28,38,40,.45));
   transform: translateZ(0);   /* drop-shadow rasters once instead of on every scroll frame */
 }
+@media (max-width: 640px) {
+  /* Handy: Österreich-Karte deutlich kräftiger — ging sonst fast unter */
+  #ueber-mich.map-bg::before { opacity: .9; background-size: 88% auto; }
+}
 
 /* ── Section Banner ── */
 .has-banner { padding-top: 0; }
