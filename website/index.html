@@ -17,7 +17,7 @@
   <meta property="og:url" content="https://berndheufelder.github.io/PHYSIObergauf/" />
   <meta property="og:locale" content="de_AT" />
   <!-- fonts are self-hosted via css/styles.css (no Google Fonts requests) -->
-  <link rel="stylesheet" href="css/styles.css?v=42" />
+  <link rel="stylesheet" href="css/styles.css?v=43" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -580,10 +580,17 @@
   <button class="name-ab-toggle" id="nameAb" type="button">Name: Breit ⇄</button>
   <script>
     (function () {
-      var btn = document.getElementById('nameAb');
+      var modes = [
+        [[], 'Name: Breit ⇄'],
+        [['hero-name-b'], 'Name: Unterm Berg ⇄'],
+        [['hero-name-b', 'hero-no-quote'], 'Unterm Berg, ohne Zitat ⇄']
+      ];
+      var i = 0, btn = document.getElementById('nameAb');
       btn.addEventListener('click', function () {
-        var b = document.body.classList.toggle('hero-name-b');
-        btn.textContent = b ? 'Name: Unterm Berg ⇄' : 'Name: Breit ⇄';
+        document.body.classList.remove('hero-name-b', 'hero-no-quote');
+        i = (i + 1) % modes.length;
+        modes[i][0].forEach(function (c) { document.body.classList.add(c); });
+        btn.textContent = modes[i][1];
       });
     })();
   </script>

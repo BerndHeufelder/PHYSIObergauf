@@ -182,6 +182,7 @@ nav.scrolled .nav-logo.logo-waiting { opacity: 1; pointer-events: auto; }
 .art-name-b { font-size: 28px; display: none; }
 body.hero-name-b .art-name-a { display: none; }
 body.hero-name-b .art-name-b { display: block; }
+body.hero-no-quote .hero-quote-box { display: none; }
 /* TEMPORÄR: Umschalter */
 .name-ab-toggle {
   position: fixed; left: 14px; bottom: 14px; z-index: 300;
