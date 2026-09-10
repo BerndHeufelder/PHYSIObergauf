@@ -114,6 +114,16 @@ if (galleryToggle) {
   });
 }
 
+// Leistungs-Karten: mobil einzeln aufklappbar (Titelzeile antippen)
+const catMQ = window.matchMedia('(max-width: 860px)');
+document.querySelectorAll('.cat-toggle').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    if (!catMQ.matches) return;
+    const open = btn.closest('.cat-card').classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(open));
+  });
+});
+
 // „Mehr anzeigen"-Toggles (mobil): Kurztexte (Willkommen, Über mich) und Leistungs-Details
 document.querySelectorAll('.text-toggle').forEach((btn) => {
   const target = btn.dataset.target ? document.getElementById(btn.dataset.target) : btn.parentElement;

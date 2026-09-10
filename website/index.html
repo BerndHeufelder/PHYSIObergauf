@@ -15,7 +15,7 @@
   <meta property="og:url" content="https://berndheufelder.github.io/PHYSIObergauf/" />
   <meta property="og:locale" content="de_AT" />
   <!-- fonts are self-hosted via css/styles.css (no Google Fonts requests) -->
-  <link rel="stylesheet" href="css/styles.css?v=33" />
+  <link rel="stylesheet" href="css/styles.css?v=34" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -115,7 +115,7 @@
   </section>
 
   <!-- ── Willkommen ── -->
-  <section id="willkommen">
+  <section id="willkommen" class="collapsible">
     <div class="willkommen-content">
       <div class="willkommen-head">
         <div class="section-label">Schön, dass du da bist</div>
@@ -125,12 +125,12 @@
         <img src="img/praxis-raum.jpg" width="1536" height="1024" loading="lazy" decoding="async"
           alt="Heller Behandlungsraum der Praxis Physio Bergauf mit Therapieliege und Sprossenwand" />
       </div>
-      <div class="willkommen-text collapsible">
+      <div class="willkommen-text">
         <p class="more-text">In meiner Praxis stehst DU und dein Wohlbefinden im Mittelpunkt. Mit gezielter Physiotherapie und wohltuenden Heilmassagen unterstütze ich dich dabei, Schmerzen zu lindern, Beweglichkeit zu verbessern und neue Kraft für den Alltag zu gewinnen.</p>
         <p class="more-text">Ob nach Verletzungen, bei chronischen Beschwerden oder einfach zur Entspannung — ich nehme mir Zeit für dich und erstelle individuelle Behandlungspläne, die genau auf deine Bedürfnisse abgestimmt sind. Fachliche Kompetenz, persönliche Betreuung und eine angenehme Atmosphäre bilden die Grundlage meiner Arbeit.</p>
         <blockquote class="einstein-quote"><strong>Meine Philosophie:</strong> Zeit für individuelle Betreuung und verständliche Aufklärung, körperliches Wohlbefinden durch gezielte Therapiemaßnahmen.</blockquote>
         <p class="willkommen-cta more-text">Ich freue mich darauf, dich auf deinem Weg zu mehr Gesundheit und Lebensqualität zu begleiten.</p>
-        <button class="text-toggle" type="button" aria-expanded="false">Mehr anzeigen</button>
+        <button class="text-toggle" type="button" data-target="willkommen" aria-expanded="false">Mehr anzeigen</button>
       </div>
     </div>
     <!-- kleine Praxis-Galerie: volle Sektionsbreite; mobil eingeklappt (Mehr zeigen) -->
@@ -290,11 +290,11 @@
       <p>Ich nehme mir Zeit, höre aufmerksam zu und schaue genau hin – denn jeder Mensch ist einzigartig und verdient eine Behandlung, die wirklich zu ihm passt.</p>
     </div>
 
-    <div class="cat-grid" id="catGrid">
+    <div class="cat-grid">
       <div class="cat-card">
         <img class="cat-card-img" src="img/behandlung-liege.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="Manuelle Therapie auf der Behandlungsliege" />
         <div class="cat-body">
-          <h3>Physiotherapie</h3>
+          <h3><button class="cat-toggle" type="button" aria-expanded="false">Physiotherapie<span class="cat-chevron" aria-hidden="true"></span></button></h3>
           <p>Durch gezielte <strong>manuelle Therapie, aktives Training und das Erlernen gesunder Bewegungsmuster</strong> arbeite ich mit dir daran, nachhaltige Lösungen zu schaffen – für weniger Schmerzen, mehr Beweglichkeit und ein gesundes Körpergefühl im Alltag. Ich bin überzeugt, dass der Körper in den meisten Fällen die Fähigkeit besitzt, sich anzupassen und zu regenerieren. Oft braucht er lediglich die richtigen Impulse, um wieder in sein natürliches Gleichgewicht zu finden.</p>
           <h4 class="cat-list-title">Anwendungsbereiche</h4>
           <ul>
@@ -313,7 +313,7 @@
       <div class="cat-card">
         <img class="cat-card-img" src="img/behandlung-viszeral.jpg" width="666" height="1000" loading="lazy" decoding="async" alt="Viszerale Therapie im Bauchbereich" />
         <div class="cat-body">
-          <h3>Viszerale Therapie</h3>
+          <h3><button class="cat-toggle" type="button" aria-expanded="false">Viszerale Therapie<span class="cat-chevron" aria-hidden="true"></span></button></h3>
           <p>Wenn wir uns bewegen, sind nicht nur unsere Gelenke und Muskeln beteiligt, sondern zu einem großen Teil auch unsere Organe. Diese müssen flexibel und gegeneinander gut verschieblich sein. Das gewährleistet zum einen eine „reibungslose" Beweglichkeit und zum anderen eine einwandfreie Funktion der einzelnen Organe.</p>
           <p>Aus vielen Gründen kann es zu Dysfunktionen der Organe kommen: Infektionen, Operationen, Fehlernährung, schlechte Haltung, Skoliosen oder emotionale Belastungen. Als Konsequenz daraus bauen die belasteten Organe Spannungen auf und können diese in Folge auf den Bewegungsapparat übertragen.</p>
           <p>Beispielsweise können Verstopfung oder häufige Blasenentzündungen zu Beschwerden am Hüftgelenk oder an der Lendenwirbelsäule (Schmerzen, Bandscheibenprobleme, Gleitwirbel, …) führen.</p>
@@ -335,7 +335,7 @@
       <div class="cat-card">
         <img class="cat-card-img" src="img/anatomie-becken.jpg" width="1000" height="750" loading="lazy" decoding="async" alt="Anatomisches Becken-Modell – Beckenboden" />
         <div class="cat-body">
-          <h3>Beckenbodentherapie</h3>
+          <h3><button class="cat-toggle" type="button" aria-expanded="false">Frauengesundheit<span class="cat-chevron" aria-hidden="true"></span></button></h3>
           <p>Gerade weil der Beckenboden für viele Frauen noch immer ein Tabuthema ist, liegt mir diese Arbeit besonders am Herzen. Beschwerden wie Harnverlust, Senkungsgefühle oder Schmerzen werden oft aus Scham verschwiegen oder als „normal" hingenommen – dabei gibt es wirksame Möglichkeiten, sie zu behandeln.</p>
           <p>Mein Ziel ist es, einen geschützten Raum zu schaffen, in dem offen über diese Themen gesprochen werden kann. Mit Einfühlungsvermögen, Fachwissen und einer individuellen physiotherapeutischen Begleitung unterstütze ich dich dabei, deinen Körper besser zu verstehen, Beschwerden nachhaltig zu lindern und neues Vertrauen in dich selbst zu gewinnen.</p>
           <p>Ich wünsche mir, dass keine Frau mit ihren Beschwerden alleine bleibt oder glaubt, sie müsse diese einfach akzeptieren. Denn Lebensqualität beginnt dort, wo wir den Mut haben, über Tabuthemen zu sprechen – und gemeinsam Lösungen zu finden.</p>
@@ -351,13 +351,11 @@
       <div class="cat-card">
         <img class="cat-card-img" src="img/behandlung-beratung.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Verständliche Aufklärung mit Anatomie-App am Tablet" />
         <div class="cat-body">
-          <h3>Gesundheitsförderung &amp; Prävention</h3>
+          <h3><button class="cat-toggle" type="button" aria-expanded="false">Gesundheitsförderung &amp; Prävention<span class="cat-chevron" aria-hidden="true"></span></button></h3>
           <p>Prävention ist ebenso ein wichtiger Bestandteil meiner physiotherapeutischen Arbeit. Durch gezielte Bewegungstherapie, individuelle Beratung und verständliche Aufklärung unterstütze ich dich dabei, Zusammenhänge zu erkennen, Fehlbelastungen zu vermeiden und Beschwerden nachhaltig vorzubeugen.</p>
         </div>
       </div>
     </div>
-    <button class="text-toggle" type="button" data-target="catGrid" data-more="Mehr Details anzeigen" data-less="Weniger anzeigen" aria-expanded="false">Mehr Details anzeigen</button>
-
     <div class="zusatz">
       <h3>Zusatzleistungen</h3>
       <ul class="zusatz-list">
@@ -570,6 +568,6 @@
     </a>
   </div>
 
-  <script defer src="js/main.js?v=11"></script>
+  <script defer src="js/main.js?v=12"></script>
 </body>
 </html>
