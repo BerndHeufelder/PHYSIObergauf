@@ -114,6 +114,18 @@ if (galleryToggle) {
   });
 }
 
+// „Mehr anzeigen"-Toggles (mobil): Kurztexte (Willkommen, Über mich) und Leistungs-Details
+document.querySelectorAll('.text-toggle').forEach((btn) => {
+  const target = btn.dataset.target ? document.getElementById(btn.dataset.target) : btn.parentElement;
+  const more = btn.dataset.more || 'Mehr anzeigen';
+  const less = btn.dataset.less || 'Weniger anzeigen';
+  btn.addEventListener('click', () => {
+    const expanded = target.classList.toggle('expanded');
+    btn.textContent = expanded ? less : more;
+    btn.setAttribute('aria-expanded', String(expanded));
+  });
+});
+
 // Nav shadow via IntersectionObserver (no per-frame scroll handler)
 const navbar = document.getElementById('navbar');
 const sentinel = document.getElementById('nav-sentinel');

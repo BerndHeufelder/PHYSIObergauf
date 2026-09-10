@@ -672,8 +672,10 @@ section { padding: 96px 5vw; }
 }
 .cat-card:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(0,0,0,.1); }
 .cat-card-img {
-  width: 100%; height: 330px; object-fit: cover; display: block;
+  width: 100%; height: 280px; object-fit: cover; display: block;
 }
+/* 4. Karte (Beratung): Tablet liegt im oberen Bilddrittel */
+.cat-card:nth-child(4) .cat-card-img { object-position: center top; }
 .cat-body { padding: 1.4rem; border-top: 3px solid var(--teal); }
 .cat-card h3 {
   font-size: 1rem; font-weight: 700; margin-bottom: .35rem; color: var(--txt);
@@ -708,20 +710,57 @@ section { padding: 96px 5vw; }
   font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
   color: var(--teal); margin: 1.05rem 0 .55rem;
 }
+/* „Mehr anzeigen"-Buttons (nur mobil sichtbar) */
+.text-toggle {
+  display: none; margin: 1.1rem auto 0;
+  cursor: pointer; font-family: inherit;
+  background: #fff; color: var(--teal);
+  border: 1px solid rgba(93,167,168,.45);
+  padding: .55rem 1.4rem; border-radius: 999px;
+  font-size: .88rem; font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0,0,0,.04);
+}
+@media (max-width: 640px) {
+  /* Kurztexte: Willkommen & Über mich zeigen mobil nur den Einstieg */
+  .collapsible .text-toggle { display: block; }
+  .collapsible .more-text { display: none; }
+  .collapsible.expanded p.more-text { display: block; }
+  .collapsible.expanded .ueber-quals.more-text { display: flex; }
+  /* Philosophie-Zitat rückt direkt unters Praxisbild */
+  .willkommen-text { display: flex; flex-direction: column; }
+  .willkommen-text .einstein-quote { order: -1; }
+}
 /* Zusatzleistungen tag row */
 .zusatz { margin-top: 2.5rem; }
 .zusatz h3 {
   font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
   color: var(--teal); margin-bottom: 1rem;
 }
-.zusatz-tags { display: flex; flex-wrap: wrap; gap: .6rem; }
-.zusatz-tags span {
-  background: #fff; border: 1px solid rgba(93,167,168,.35);
-  color: var(--txt); font-size: .85rem; font-weight: 500;
-  padding: .45rem 1rem; border-radius: 999px;
-  box-shadow: 0 2px 8px rgba(0,0,0,.04);
+.zusatz-list {
+  list-style: none; display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .5rem 2rem;
 }
-@media (max-width: 860px) { .cat-grid { grid-template-columns: 1fr; } }
+.zusatz-list li {
+  font-size: .875rem; color: var(--muted); line-height: 1.45;
+  padding-left: 1.1rem; position: relative;
+}
+.zusatz-list li::before {
+  content: ''; position: absolute; left: 0; top: .5em;
+  width: 6px; height: 6px; border-radius: 50%; background: var(--teal);
+}
+@media (max-width: 860px) { .zusatz-list { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .zusatz-list { grid-template-columns: 1fr; } }
+@media (max-width: 860px) {
+  .cat-grid { grid-template-columns: 1fr; }
+  .cat-card-img { height: 200px; }
+  /* eingeklappt: nur die 4 Titel als grobe Übersicht, Details per Button */
+  #leistungen .text-toggle { display: block; }
+  .cat-grid:not(.expanded) { gap: .7rem; }
+  .cat-grid:not(.expanded) .cat-card-img { display: none; }
+  .cat-grid:not(.expanded) .cat-body > :not(h3) { display: none; }
+  .cat-grid:not(.expanded) .cat-body { padding: 1.05rem 1.2rem; }
+  .cat-grid:not(.expanded) .cat-card h3 { margin-bottom: 0; }
+}
 
 /* ── Ablauf ── */
 #ablauf { background: var(--red); color: #fff; }
@@ -797,8 +836,11 @@ section { padding: 96px 5vw; }
   border: 1px solid rgba(255,255,255,.2);
   border-radius: 14px; padding: 1.6rem;
 }
-.ablauf-card-icon { font-size: 1.6rem; margin-bottom: .75rem; }
-.ablauf-card h3 { font-size: 1rem; font-weight: 600; color: #fff; margin-bottom: .6rem; }
+.ablauf-card-icon { font-size: 1.25rem; line-height: 1; }
+.ablauf-card h3 {
+  font-size: 1rem; font-weight: 600; color: #fff; margin-bottom: .6rem;
+  display: flex; align-items: center; gap: .6rem;
+}
 .ablauf-card p { font-size: .875rem; color: rgba(255,255,255,.7); line-height: 1.65; }
 @media (max-width: 640px) { .ablauf-cards { grid-template-columns: 1fr; } }
 
@@ -990,20 +1032,26 @@ footer a:hover { color: #fff; }
 
 /* ── Nützliche Links ── */
 #links { background: var(--bg2); }
-.links-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.links-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .9rem; }
 .link-card {
   display: block; text-decoration: none;
   background: #fff; border-radius: var(--radius);
   border: 1px solid rgba(93,167,168,.18);
-  padding: 1.3rem 1.4rem;
+  padding: .95rem 1.15rem;
   box-shadow: var(--shadow);
   transition: transform .2s, box-shadow .2s;
 }
 .link-card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,.1); }
-.link-card strong { display: block; font-size: .95rem; color: var(--txt); margin-bottom: .3rem; }
+.link-card strong { display: block; font-size: .9rem; color: var(--txt); margin-bottom: .2rem; }
 .link-card strong::after { content: ' ↗'; color: var(--teal); font-weight: 700; }
-.link-card span { font-size: .82rem; color: var(--muted); line-height: 1.55; }
-@media (max-width: 860px) { .links-grid { grid-template-columns: 1fr; } }
+.link-card span { font-size: .78rem; color: var(--muted); line-height: 1.5; }
+@media (max-width: 860px) {
+  /* mobil: nur die Link-Titel als schlanke Zeilen */
+  .links-grid { grid-template-columns: 1fr; gap: .7rem; }
+  .link-card { padding: .8rem 1rem; }
+  .link-card span { display: none; }
+  .link-card strong { margin-bottom: 0; }
+}
 
 /* ── Fakten-Streifen ── */
 #fakten {
