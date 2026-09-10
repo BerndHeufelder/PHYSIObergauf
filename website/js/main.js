@@ -115,11 +115,9 @@ if (galleryToggle) {
   });
 }
 
-// Leistungs-Karten: mobil einzeln aufklappbar (Titelzeile antippen)
-const catMQ = window.matchMedia('(max-width: 860px)');
+// Leistungs-Karten: einzeln aufklappbar (Titelzeile anklicken/antippen)
 document.querySelectorAll('.cat-toggle').forEach((btn) => {
   btn.addEventListener('click', () => {
-    if (!catMQ.matches) return;
     const open = btn.closest('.cat-card').classList.toggle('open');
     btn.setAttribute('aria-expanded', String(open));
   });
