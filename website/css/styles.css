@@ -408,6 +408,8 @@ section { padding: 96px 5vw; }
   text-transform: uppercase; color: var(--teal); margin-bottom: 1rem;
 }
 .ueber-text p { color: var(--muted); line-height: 1.85; margin-bottom: 1rem; font-size: .97rem; }
+/* Kurzvorstellung: nur mobil im eingeklappten Zustand (Regel im 640er-Block) */
+.ueber-intro-kurz { display: none; }
 .ueber-quals {
   display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.8rem;
 }
@@ -737,9 +739,14 @@ section { padding: 96px 5vw; }
   /* Philosophie-Zitat rückt direkt unters Praxisbild */
   .willkommen-text { display: flex; flex-direction: column; }
   .willkommen-text .einstein-quote { order: -1; }
-  /* Praxis-Galerie erst nach „Mehr anzeigen" sichtbar */
+  /* Praxis-Galerie erst nach „Mehr anzeigen" sichtbar — dann komplett offen */
   #willkommen.collapsible:not(.expanded) .willkommen-gallery,
   #willkommen.collapsible:not(.expanded) .gallery-toggle { display: none; }
+  #willkommen.collapsible.expanded .willkommen-gallery img:nth-child(n+3) { display: block; }
+  #willkommen.collapsible.expanded .gallery-toggle { display: none; }
+  /* Über mich eingeklappt: Kurzvorstellung statt Begrüßung + Langtext */
+  .ueber-text:not(.expanded) .ueber-intro-kurz { display: block; }
+  .collapsible.expanded h2.more-text { display: block; }
 }
 /* Zusatzleistungen tag row */
 .zusatz { margin-top: 2.5rem; }
@@ -843,22 +850,22 @@ section { padding: 96px 5vw; }
   outline-offset: 10px;
   border-radius: 12px;
 }
+/* Hinweis-Kasten: drei Punkte kompakt in EINER Box mit Trennlinien */
 .ablauf-cards {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
   margin-top: 3rem;
-}
-.ablauf-card {
   background: rgba(255,255,255,.1);
   border: 1px solid rgba(255,255,255,.2);
-  border-radius: 14px; padding: 1.6rem;
+  border-radius: 14px;
+  padding: .35rem 1.3rem;
 }
-.ablauf-card-icon { font-size: 1.25rem; line-height: 1; }
+.ablauf-card { padding: .95rem 0; }
+.ablauf-card + .ablauf-card { border-top: 1px solid rgba(255,255,255,.16); }
+.ablauf-card-icon { font-size: 1.2rem; line-height: 1; }
 .ablauf-card h3 {
-  font-size: 1rem; font-weight: 600; color: #fff; margin-bottom: .6rem;
+  font-size: .95rem; font-weight: 600; color: #fff; margin-bottom: .35rem;
   display: flex; align-items: center; gap: .6rem;
 }
-.ablauf-card p { font-size: .875rem; color: rgba(255,255,255,.7); line-height: 1.65; }
-@media (max-width: 640px) { .ablauf-cards { grid-template-columns: 1fr; } }
+.ablauf-card p { font-size: .875rem; color: rgba(255,255,255,.7); line-height: 1.5; }
 
 /* ── Kontakt ── */
 #kontakt { background: var(--bg); }
