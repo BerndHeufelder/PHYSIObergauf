@@ -111,6 +111,7 @@ if (galleryToggle) {
     const expanded = gallery.classList.toggle('expanded');
     galleryToggle.textContent = expanded ? 'Weniger zeigen' : 'Mehr zeigen';
     galleryToggle.setAttribute('aria-expanded', String(expanded));
+    if (!expanded) gallery.scrollIntoView(); // Zuklappen: zurück zum Anfang statt Scroll-Sprung
   });
 }
 
@@ -133,6 +134,7 @@ document.querySelectorAll('.text-toggle').forEach((btn) => {
     const expanded = target.classList.toggle('expanded');
     btn.textContent = expanded ? less : more;
     btn.setAttribute('aria-expanded', String(expanded));
+    if (!expanded) target.scrollIntoView(); // Zuklappen: zurück zum Anfang statt Scroll-Sprung
   });
 });
 

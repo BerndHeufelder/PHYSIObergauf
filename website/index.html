@@ -15,7 +15,7 @@
   <meta property="og:url" content="https://berndheufelder.github.io/PHYSIObergauf/" />
   <meta property="og:locale" content="de_AT" />
   <!-- fonts are self-hosted via css/styles.css (no Google Fonts requests) -->
-  <link rel="stylesheet" href="css/styles.css?v=35" />
+  <link rel="stylesheet" href="css/styles.css?v=36" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -106,7 +106,7 @@
       </div>
     </div>
 
-    <blockquote class="hero-quote-box">„Gemeinsam geht’s bergauf – mit gezielter Therapie und persönlicher Begleitung"</blockquote>
+    <blockquote class="hero-quote-box">„Gemeinsam geht’s bergauf – mit gezielter Therapie und persönlicher Begleitung"<span class="hero-quote-name">Katharina Heufelder, BSc.</span></blockquote>
 
     <a href="#willkommen" class="hero-scroll">
       <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
@@ -160,7 +160,7 @@
   </section>
 
   <!-- ── Über mich ── -->
-  <section id="ueber-mich" class="has-banner map-bg">
+  <section id="ueber-mich" class="has-banner map-bg collapsible">
     <div class="section-banner banner-red">
       <div class="section-banner-overlay">
         <div class="section-label">Das bin ich</div>
@@ -174,7 +174,7 @@
     </div>
     <div class="ueber-grid">
       <div class="ueber-textcol">
-        <div class="ueber-text collapsible">
+        <div class="ueber-text">
           <!-- Porträt rechts vom Text (ab Tablet); Handy zeigt stattdessen das runde Porträt -->
           <div class="ueber-portrait-float">
             <img src="img/portrait-kathi.jpg" width="600" height="600" loading="lazy" decoding="async"
@@ -193,7 +193,6 @@
             <span class="qual-tag">Physiotherapeutin</span>
             <span class="qual-tag">Medizinische Masseurin</span>
           </div>
-          <button class="text-toggle" type="button" aria-expanded="false">Mehr anzeigen</button>
         </div>
         <details class="fb">
           <summary>
@@ -276,6 +275,8 @@
         </div>
       </div>
     </div>
+    <!-- klappt Langtext + Werdegang + Fortbildungen gemeinsam auf (mobil) -->
+    <button class="text-toggle" type="button" data-target="ueber-mich" aria-expanded="false">Mehr anzeigen</button>
   </section>
 
   <!-- ── Leistungen ── -->
@@ -481,7 +482,7 @@
       <div class="map-wrap">
         <iframe
           title="Batschuns Karte"
-          src="https://www.openstreetmap.org/export/embed.html?bbox=9.6500%2C47.2750%2C9.6900%2C47.2850&layer=mapnik&marker=47.280372%2C9.666690"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=9.6570%2C47.2762%2C9.6765%2C47.2845&layer=mapnik&marker=47.280372%2C9.666690"
           loading="lazy"
           allowfullscreen>
         </iframe>
@@ -571,6 +572,6 @@
     </a>
   </div>
 
-  <script defer src="js/main.js?v=12"></script>
+  <script defer src="js/main.js?v=13"></script>
 </body>
 </html>
