@@ -173,24 +173,6 @@ nav.scrolled .nav-logo.logo-waiting { opacity: 1; pointer-events: auto; }
   margin: -0.4rem 0 1.4rem;
   opacity: .85;
 }
-/* Name in der Berg-Linie — schwarz, Strichstärke wie die Linienzeichnung (Gewicht 500) */
-.hero-art-name {
-  fill: #1A1A1A;
-  font-family: 'Inter', sans-serif; font-weight: 500;
-}
-.art-name-a { font-size: 38px; }
-.art-name-b { font-size: 27px; display: none; }
-body.hero-name-b .art-name-a { display: none; }
-body.hero-name-b .art-name-b { display: block; }
-body.hero-no-quote .hero-quote-box { display: none; }
-/* TEMPORÄR: Umschalter */
-.name-ab-toggle {
-  position: fixed; left: 14px; bottom: 14px; z-index: 300;
-  background: #1A1A1A; color: #fff; border: 0; cursor: pointer;
-  font: 600 .78rem/1 'Inter', sans-serif; padding: .62rem 1rem; border-radius: 999px;
-  box-shadow: 0 4px 14px rgba(0,0,0,.25);
-}
-@media (max-width: 640px) { .name-ab-toggle { bottom: calc(90px + env(safe-area-inset-bottom)); } }
 /* hero location pin (Batschuns) under the headline */
 .hero-loc {
   display: inline-flex; align-items: center; gap: .4rem;
