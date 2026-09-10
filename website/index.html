@@ -17,7 +17,7 @@
   <meta property="og:url" content="https://berndheufelder.github.io/PHYSIObergauf/" />
   <meta property="og:locale" content="de_AT" />
   <!-- fonts are self-hosted via css/styles.css (no Google Fonts requests) -->
-  <link rel="stylesheet" href="css/styles.css?v=38" />
+  <link rel="stylesheet" href="css/styles.css?v=39" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -79,8 +79,7 @@
         Batschuns
       </div>
       <!-- Puls-Linie geht in Bergsilhouette über — Gesundheit trifft Bergauf -->
-      <div class="hero-art-wrap">
-      <svg class="hero-art" viewBox="0 0 700 240" fill="none" aria-hidden="true">
+      <svg class="hero-art" viewBox="0 0 700 272" fill="none" aria-hidden="true">
         <path d="M10 185 H68
                  Q76 170 84 185 H118
                  L128 192 L140 100 L152 208 L162 185 H188
@@ -96,12 +95,9 @@
                  C606 73 612 71 618 66
                  C640 84 664 112 686 138"
               stroke="#1A1A1A" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
-        <!-- Name unter der Bergsilhouette — A/B-Varianten (Toggle unten links) -->
-        <text class="art-name-caps" x="465" y="156" text-anchor="middle">KATHARINA HEUFELDER</text>
-        <text class="art-name-script" x="465" y="164" text-anchor="middle">Katharina Heufelder</text>
+        <!-- Name als Unterzeile — textLength spannt ihn exakt auf Linienbreite -->
+        <text class="hero-art-name" x="10" y="262" textLength="676" lengthAdjust="spacing">KATHARINA HEUFELDER</text>
       </svg>
-      <span class="hero-art-name">Katharina Heufelder</span>
-      </div>
       <div class="btn-group">
         <a href="#terminanfrage" class="btn-primary">
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
@@ -114,7 +110,7 @@
       </div>
     </div>
 
-    <blockquote class="hero-quote-box">„Gemeinsam geht’s bergauf – mit gezielter Therapie und persönlicher Begleitung"<span class="hero-quote-name">Katharina Heufelder, BSc.</span></blockquote>
+    <blockquote class="hero-quote-box">„Gemeinsam geht’s bergauf – mit gezielter Therapie und persönlicher Begleitung"</blockquote>
 
     <a href="#willkommen" class="hero-scroll">
       <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
@@ -295,8 +291,6 @@
         <h2 class="section-title">Leistungen</h2>
       </div>
     </div>
-    <p class="section-sub">Ursachen behandeln statt Symptome verwalten.</p>
-
     <div class="leistungen-intro">
       <p class="intro-quote">„Jeder Mensch bringt seine eigene Geschichte mit und der Körper erzählt oft mehr, als man denkt."</p>
       <p>Ich nehme mir Zeit, höre aufmerksam zu und schaue genau hin – denn jeder Mensch ist einzigartig und verdient eine Behandlung, die wirklich zu ihm passt.</p>
@@ -581,24 +575,5 @@
   </div>
 
   <script defer src="js/main.js?v=13"></script>
-  <!-- TEMPORÄR: A/B-Umschalter Name in der Berg-Linie -->
-  <button class="name-ab-toggle" id="nameAb" type="button">Name: Aktuell ⇄</button>
-  <script>
-    (function () {
-      var modes = [
-        ['', 'Name: Aktuell ⇄'],
-        ['name-v1', 'Name: Caps im Berg ⇄'],
-        ['name-v2', 'Name: Handschrift ⇄'],
-        ['name-v3', 'Name: Unterzeile ⇄']
-      ];
-      var i = 0, btn = document.getElementById('nameAb');
-      btn.addEventListener('click', function () {
-        document.body.classList.remove('name-v1', 'name-v2', 'name-v3');
-        i = (i + 1) % modes.length;
-        if (modes[i][0]) document.body.classList.add(modes[i][0]);
-        btn.textContent = modes[i][1];
-      });
-    })();
-  </script>
 </body>
 </html>
