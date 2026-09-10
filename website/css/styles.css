@@ -630,12 +630,13 @@ section { padding: 96px 5vw; }
 
 @media (max-width: 760px) {
   .vtl-head { display: none; }
-  .vtl2::before { left: 28px; transform: none; }
+  /* Linie exakt mittig unter der 72px-Jahresspalte (links davor: 1.2rem List-Padding) */
+  .vtl2::before { left: calc(1.2rem + 36px); transform: none; }
   .vtl2-year {
-    grid-template-columns: 56px 1fr; column-gap: 1rem; row-gap: 0;
-    align-items: start; padding-left: 0; margin-bottom: 1.1rem;
+    grid-template-columns: 72px 1fr; column-gap: 1rem; row-gap: 0;
+    align-items: center; padding-left: 0; margin-bottom: 1.1rem;
   }
-  .vtl2-marker { position: static; grid-column: 1; grid-row: 1; justify-self: center; }
+  .vtl2-marker { position: static; grid-column: 1; grid-row: 1; justify-self: center; align-self: center; }
   .vtl2-left, .vtl2-right { grid-column: 2; grid-row: 1; text-align: left; }
   .vtl2-left:empty, .vtl2-right:empty { display: none; }
   .vtl2-left.cols2, .vtl2-right.cols2 { grid-template-columns: 1fr; }
