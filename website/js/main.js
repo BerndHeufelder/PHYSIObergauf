@@ -115,6 +115,12 @@ if (galleryToggle) {
   });
 }
 
+// Desktop: Beruflicher Werdegang startet ausgeklappt (genug Platz neben dem Text)
+if (window.matchMedia('(min-width: 981px)').matches) {
+  const werdegang = document.querySelector('.ueber-timelinecol details.fb');
+  if (werdegang) werdegang.open = true;
+}
+
 // Leistungs-Karten: einzeln aufklappbar (Titelzeile anklicken/antippen)
 document.querySelectorAll('.cat-toggle').forEach((btn) => {
   btn.addEventListener('click', () => {

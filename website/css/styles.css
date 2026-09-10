@@ -295,8 +295,8 @@ section { padding: 96px 5vw; }
   transform: translateZ(0);   /* drop-shadow rasters once instead of on every scroll frame */
 }
 @media (max-width: 640px) {
-  /* Handy: Österreich-Karte deutlich kräftiger — ging sonst fast unter */
-  #ueber-mich.map-bg::before { opacity: .9; background-size: 88% auto; }
+  /* Handy: Österreich-Karte volle Deckkraft — ging sonst fast unter */
+  #ueber-mich.map-bg::before { opacity: 1; background-size: 88% auto; }
 }
 
 /* ── Section Banner ── */
@@ -483,6 +483,11 @@ section { padding: 96px 5vw; }
 }
 /* Werdegang-Timeline im selben Akkordeon-Stil (rechte Spalte) */
 .werdegang .fb { margin-top: 0; }
+/* Desktop: Werdegang startet offen (JS setzt open) und die Box lässt die
+   Österreich-Karte leicht durchscheinen */
+@media (min-width: 981px) {
+  .werdegang .fb { background: rgba(255,255,255,.72); }
+}
 .fb .vtl2 { padding: .2rem 1.2rem 1.2rem; }
 
 /* ── Willkommen ── */
